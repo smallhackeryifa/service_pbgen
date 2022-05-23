@@ -22,8 +22,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ModelServiceClient interface {
-	// Sends a greeting
-	SayHello(ctx context.Context, in *HelloRequest, opts ...grpc.CallOption) (*HelloReply, error)
 	// 创建模型
 	ModelCreate(ctx context.Context, in *ModelCreateRequest, opts ...grpc.CallOption) (*ModelCreateResponse, error)
 	// 获取模型
@@ -48,15 +46,6 @@ type modelServiceClient struct {
 
 func NewModelServiceClient(cc grpc.ClientConnInterface) ModelServiceClient {
 	return &modelServiceClient{cc}
-}
-
-func (c *modelServiceClient) SayHello(ctx context.Context, in *HelloRequest, opts ...grpc.CallOption) (*HelloReply, error) {
-	out := new(HelloReply)
-	err := c.cc.Invoke(ctx, "/model_api.ModelService/SayHello", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
 }
 
 func (c *modelServiceClient) ModelCreate(ctx context.Context, in *ModelCreateRequest, opts ...grpc.CallOption) (*ModelCreateResponse, error) {
@@ -135,8 +124,6 @@ func (c *modelServiceClient) ModelPredict(ctx context.Context, in *ModelPredictR
 // All implementations must embed UnimplementedModelServiceServer
 // for forward compatibility
 type ModelServiceServer interface {
-	// Sends a greeting
-	SayHello(context.Context, *HelloRequest) (*HelloReply, error)
 	// 创建模型
 	ModelCreate(context.Context, *ModelCreateRequest) (*ModelCreateResponse, error)
 	// 获取模型
@@ -160,9 +147,6 @@ type ModelServiceServer interface {
 type UnimplementedModelServiceServer struct {
 }
 
-func (UnimplementedModelServiceServer) SayHello(context.Context, *HelloRequest) (*HelloReply, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SayHello not implemented")
-}
 func (UnimplementedModelServiceServer) ModelCreate(context.Context, *ModelCreateRequest) (*ModelCreateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ModelCreate not implemented")
 }
@@ -198,24 +182,6 @@ type UnsafeModelServiceServer interface {
 
 func RegisterModelServiceServer(s grpc.ServiceRegistrar, srv ModelServiceServer) {
 	s.RegisterService(&ModelService_ServiceDesc, srv)
-}
-
-func _ModelService_SayHello_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(HelloRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ModelServiceServer).SayHello(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/model_api.ModelService/SayHello",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ModelServiceServer).SayHello(ctx, req.(*HelloRequest))
-	}
-	return interceptor(ctx, in, info, handler)
 }
 
 func _ModelService_ModelCreate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -369,10 +335,6 @@ var ModelService_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "model_api.ModelService",
 	HandlerType: (*ModelServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "SayHello",
-			Handler:    _ModelService_SayHello_Handler,
-		},
 		{
 			MethodName: "ModelCreate",
 			Handler:    _ModelService_ModelCreate_Handler,

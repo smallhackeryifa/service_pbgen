@@ -31,40 +31,6 @@ var _ = runtime.String
 var _ = utilities.NewDoubleArray
 var _ = metadata.Join
 
-func request_ModelService_SayHello_0(ctx context.Context, marshaler runtime.Marshaler, client ModelServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq HelloRequest
-	var metadata runtime.ServerMetadata
-
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
-	}
-
-	msg, err := client.SayHello(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
-	return msg, metadata, err
-
-}
-
-func local_request_ModelService_SayHello_0(ctx context.Context, marshaler runtime.Marshaler, server ModelServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq HelloRequest
-	var metadata runtime.ServerMetadata
-
-	newReader, berr := utilities.IOReaderFactory(req.Body)
-	if berr != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
-	}
-	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
-	}
-
-	msg, err := server.SayHello(ctx, &protoReq)
-	return msg, metadata, err
-
-}
-
 func request_ModelService_ModelCreate_0(ctx context.Context, marshaler runtime.Marshaler, client ModelServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq ModelCreateRequest
 	var metadata runtime.ServerMetadata
@@ -343,30 +309,6 @@ func local_request_ModelService_ModelPredict_0(ctx context.Context, marshaler ru
 // Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterModelServiceHandlerFromEndpoint instead.
 func RegisterModelServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server ModelServiceServer) error {
 
-	mux.Handle("POST", pattern_ModelService_SayHello_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
-		ctx, cancel := context.WithCancel(req.Context())
-		defer cancel()
-		var stream runtime.ServerTransportStream
-		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
-		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		var err error
-		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/model_api.ModelService/SayHello", runtime.WithHTTPPathPattern("/v1/example/echo"))
-		if err != nil {
-			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
-			return
-		}
-		resp, md, err := local_request_ModelService_SayHello_0(ctx, inboundMarshaler, server, req, pathParams)
-		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
-		ctx = runtime.NewServerMetadataContext(ctx, md)
-		if err != nil {
-			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
-			return
-		}
-
-		forward_ModelService_SayHello_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
-	})
-
 	mux.Handle("POST", pattern_ModelService_ModelCreate_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -600,27 +542,6 @@ func RegisterModelServiceHandler(ctx context.Context, mux *runtime.ServeMux, con
 // "ModelServiceClient" to call the correct interceptors.
 func RegisterModelServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client ModelServiceClient) error {
 
-	mux.Handle("POST", pattern_ModelService_SayHello_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
-		ctx, cancel := context.WithCancel(req.Context())
-		defer cancel()
-		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		var err error
-		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/model_api.ModelService/SayHello", runtime.WithHTTPPathPattern("/v1/example/echo"))
-		if err != nil {
-			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
-			return
-		}
-		resp, md, err := request_ModelService_SayHello_0(ctx, inboundMarshaler, client, req, pathParams)
-		ctx = runtime.NewServerMetadataContext(ctx, md)
-		if err != nil {
-			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
-			return
-		}
-
-		forward_ModelService_SayHello_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
-	})
-
 	mux.Handle("POST", pattern_ModelService_ModelCreate_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -793,8 +714,6 @@ func RegisterModelServiceHandlerClient(ctx context.Context, mux *runtime.ServeMu
 }
 
 var (
-	pattern_ModelService_SayHello_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "example", "echo"}, ""))
-
 	pattern_ModelService_ModelCreate_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"model", "create"}, ""))
 
 	pattern_ModelService_ModelGet_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"model", "get"}, ""))
@@ -813,8 +732,6 @@ var (
 )
 
 var (
-	forward_ModelService_SayHello_0 = runtime.ForwardResponseMessage
-
 	forward_ModelService_ModelCreate_0 = runtime.ForwardResponseMessage
 
 	forward_ModelService_ModelGet_0 = runtime.ForwardResponseMessage
