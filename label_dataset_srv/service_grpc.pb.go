@@ -41,9 +41,9 @@ type LabelDatasetClient interface {
 	// 创建数据集
 	DatasetCreate(ctx context.Context, in *DatasetCreateRequest, opts ...grpc.CallOption) (*DatasetCreateResponse, error)
 	// 获取数据集
-	DatasetGet(ctx context.Context, in *DatasetGetRequest, opts ...grpc.CallOption) (*DatasetGetRequest, error)
+	DatasetGet(ctx context.Context, in *DatasetGetRequest, opts ...grpc.CallOption) (*DatasetGetResponse, error)
 	// 数据集列表
-	DatasetList(ctx context.Context, in *DatasetListRequest, opts ...grpc.CallOption) (*DatasetListRequest, error)
+	DatasetList(ctx context.Context, in *DatasetListRequest, opts ...grpc.CallOption) (*DatasetListResponse, error)
 	// 搜索数据集
 	DatasetSearch(ctx context.Context, in *DatasetSearchRequest, opts ...grpc.CallOption) (*DatasetSearchResponse, error)
 	// 数据集更新
@@ -143,8 +143,8 @@ func (c *labelDatasetClient) DatasetCreate(ctx context.Context, in *DatasetCreat
 	return out, nil
 }
 
-func (c *labelDatasetClient) DatasetGet(ctx context.Context, in *DatasetGetRequest, opts ...grpc.CallOption) (*DatasetGetRequest, error) {
-	out := new(DatasetGetRequest)
+func (c *labelDatasetClient) DatasetGet(ctx context.Context, in *DatasetGetRequest, opts ...grpc.CallOption) (*DatasetGetResponse, error) {
+	out := new(DatasetGetResponse)
 	err := c.cc.Invoke(ctx, "/label_dataset_srv.LabelDataset/DatasetGet", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -152,8 +152,8 @@ func (c *labelDatasetClient) DatasetGet(ctx context.Context, in *DatasetGetReque
 	return out, nil
 }
 
-func (c *labelDatasetClient) DatasetList(ctx context.Context, in *DatasetListRequest, opts ...grpc.CallOption) (*DatasetListRequest, error) {
-	out := new(DatasetListRequest)
+func (c *labelDatasetClient) DatasetList(ctx context.Context, in *DatasetListRequest, opts ...grpc.CallOption) (*DatasetListResponse, error) {
+	out := new(DatasetListResponse)
 	err := c.cc.Invoke(ctx, "/label_dataset_srv.LabelDataset/DatasetList", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -220,9 +220,9 @@ type LabelDatasetServer interface {
 	// 创建数据集
 	DatasetCreate(context.Context, *DatasetCreateRequest) (*DatasetCreateResponse, error)
 	// 获取数据集
-	DatasetGet(context.Context, *DatasetGetRequest) (*DatasetGetRequest, error)
+	DatasetGet(context.Context, *DatasetGetRequest) (*DatasetGetResponse, error)
 	// 数据集列表
-	DatasetList(context.Context, *DatasetListRequest) (*DatasetListRequest, error)
+	DatasetList(context.Context, *DatasetListRequest) (*DatasetListResponse, error)
 	// 搜索数据集
 	DatasetSearch(context.Context, *DatasetSearchRequest) (*DatasetSearchResponse, error)
 	// 数据集更新
@@ -265,10 +265,10 @@ func (UnimplementedLabelDatasetServer) StateSnapshotGet(context.Context, *StateS
 func (UnimplementedLabelDatasetServer) DatasetCreate(context.Context, *DatasetCreateRequest) (*DatasetCreateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DatasetCreate not implemented")
 }
-func (UnimplementedLabelDatasetServer) DatasetGet(context.Context, *DatasetGetRequest) (*DatasetGetRequest, error) {
+func (UnimplementedLabelDatasetServer) DatasetGet(context.Context, *DatasetGetRequest) (*DatasetGetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DatasetGet not implemented")
 }
-func (UnimplementedLabelDatasetServer) DatasetList(context.Context, *DatasetListRequest) (*DatasetListRequest, error) {
+func (UnimplementedLabelDatasetServer) DatasetList(context.Context, *DatasetListRequest) (*DatasetListResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DatasetList not implemented")
 }
 func (UnimplementedLabelDatasetServer) DatasetSearch(context.Context, *DatasetSearchRequest) (*DatasetSearchResponse, error) {
