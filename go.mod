@@ -1,4 +1,4 @@
-module service_pbgen
+module github.com/smallhackeryifa/service_pbgen
 
 go 1.17
 
