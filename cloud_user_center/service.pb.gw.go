@@ -31,7 +31,7 @@ var _ = runtime.String
 var _ = utilities.NewDoubleArray
 var _ = metadata.Join
 
-func request_Greeter_SayHello_0(ctx context.Context, marshaler runtime.Marshaler, client GreeterClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_CloudUserCenter_SayHello_0(ctx context.Context, marshaler runtime.Marshaler, client CloudUserCenterClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq HelloRequest
 	var metadata runtime.ServerMetadata
 
@@ -48,7 +48,7 @@ func request_Greeter_SayHello_0(ctx context.Context, marshaler runtime.Marshaler
 
 }
 
-func local_request_Greeter_SayHello_0(ctx context.Context, marshaler runtime.Marshaler, server GreeterServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_CloudUserCenter_SayHello_0(ctx context.Context, marshaler runtime.Marshaler, server CloudUserCenterServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq HelloRequest
 	var metadata runtime.ServerMetadata
 
@@ -65,7 +65,7 @@ func local_request_Greeter_SayHello_0(ctx context.Context, marshaler runtime.Mar
 
 }
 
-func request_Greeter_UserInfoCreate_0(ctx context.Context, marshaler runtime.Marshaler, client GreeterClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_CloudUserCenter_UserInfoCreate_0(ctx context.Context, marshaler runtime.Marshaler, client CloudUserCenterClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq UserInfoCreateRequest
 	var metadata runtime.ServerMetadata
 
@@ -82,7 +82,7 @@ func request_Greeter_UserInfoCreate_0(ctx context.Context, marshaler runtime.Mar
 
 }
 
-func local_request_Greeter_UserInfoCreate_0(ctx context.Context, marshaler runtime.Marshaler, server GreeterServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_CloudUserCenter_UserInfoCreate_0(ctx context.Context, marshaler runtime.Marshaler, server CloudUserCenterServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq UserInfoCreateRequest
 	var metadata runtime.ServerMetadata
 
@@ -99,7 +99,7 @@ func local_request_Greeter_UserInfoCreate_0(ctx context.Context, marshaler runti
 
 }
 
-func request_Greeter_UserInfoAuth_0(ctx context.Context, marshaler runtime.Marshaler, client GreeterClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_CloudUserCenter_UserInfoAuth_0(ctx context.Context, marshaler runtime.Marshaler, client CloudUserCenterClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq UserInfoAuthRequest
 	var metadata runtime.ServerMetadata
 
@@ -116,7 +116,7 @@ func request_Greeter_UserInfoAuth_0(ctx context.Context, marshaler runtime.Marsh
 
 }
 
-func local_request_Greeter_UserInfoAuth_0(ctx context.Context, marshaler runtime.Marshaler, server GreeterServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_CloudUserCenter_UserInfoAuth_0(ctx context.Context, marshaler runtime.Marshaler, server CloudUserCenterServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq UserInfoAuthRequest
 	var metadata runtime.ServerMetadata
 
@@ -133,7 +133,7 @@ func local_request_Greeter_UserInfoAuth_0(ctx context.Context, marshaler runtime
 
 }
 
-func request_Greeter_UserInfoUpdate_0(ctx context.Context, marshaler runtime.Marshaler, client GreeterClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_CloudUserCenter_UserInfoUpdate_0(ctx context.Context, marshaler runtime.Marshaler, client CloudUserCenterClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq UserInfoUpdateRequest
 	var metadata runtime.ServerMetadata
 
@@ -150,7 +150,7 @@ func request_Greeter_UserInfoUpdate_0(ctx context.Context, marshaler runtime.Mar
 
 }
 
-func local_request_Greeter_UserInfoUpdate_0(ctx context.Context, marshaler runtime.Marshaler, server GreeterServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_CloudUserCenter_UserInfoUpdate_0(ctx context.Context, marshaler runtime.Marshaler, server CloudUserCenterServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq UserInfoUpdateRequest
 	var metadata runtime.ServerMetadata
 
@@ -167,7 +167,7 @@ func local_request_Greeter_UserInfoUpdate_0(ctx context.Context, marshaler runti
 
 }
 
-func request_Greeter_UserInfoDelete_0(ctx context.Context, marshaler runtime.Marshaler, client GreeterClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_CloudUserCenter_UserInfoDelete_0(ctx context.Context, marshaler runtime.Marshaler, client CloudUserCenterClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq UserInfoDeleteRequest
 	var metadata runtime.ServerMetadata
 
@@ -184,7 +184,7 @@ func request_Greeter_UserInfoDelete_0(ctx context.Context, marshaler runtime.Mar
 
 }
 
-func local_request_Greeter_UserInfoDelete_0(ctx context.Context, marshaler runtime.Marshaler, server GreeterServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_CloudUserCenter_UserInfoDelete_0(ctx context.Context, marshaler runtime.Marshaler, server CloudUserCenterServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq UserInfoDeleteRequest
 	var metadata runtime.ServerMetadata
 
@@ -201,7 +201,7 @@ func local_request_Greeter_UserInfoDelete_0(ctx context.Context, marshaler runti
 
 }
 
-func request_Greeter_UserInfoGet_0(ctx context.Context, marshaler runtime.Marshaler, client GreeterClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_CloudUserCenter_UserInfoGet_0(ctx context.Context, marshaler runtime.Marshaler, client CloudUserCenterClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq UserInfoGetRequest
 	var metadata runtime.ServerMetadata
 
@@ -218,7 +218,7 @@ func request_Greeter_UserInfoGet_0(ctx context.Context, marshaler runtime.Marsha
 
 }
 
-func local_request_Greeter_UserInfoGet_0(ctx context.Context, marshaler runtime.Marshaler, server GreeterServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_CloudUserCenter_UserInfoGet_0(ctx context.Context, marshaler runtime.Marshaler, server CloudUserCenterServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq UserInfoGetRequest
 	var metadata runtime.ServerMetadata
 
@@ -235,7 +235,7 @@ func local_request_Greeter_UserInfoGet_0(ctx context.Context, marshaler runtime.
 
 }
 
-func request_Greeter_MUserInfoGet_0(ctx context.Context, marshaler runtime.Marshaler, client GreeterClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_CloudUserCenter_MUserInfoGet_0(ctx context.Context, marshaler runtime.Marshaler, client CloudUserCenterClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq MUserInfoGetRequest
 	var metadata runtime.ServerMetadata
 
@@ -252,7 +252,7 @@ func request_Greeter_MUserInfoGet_0(ctx context.Context, marshaler runtime.Marsh
 
 }
 
-func local_request_Greeter_MUserInfoGet_0(ctx context.Context, marshaler runtime.Marshaler, server GreeterServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_CloudUserCenter_MUserInfoGet_0(ctx context.Context, marshaler runtime.Marshaler, server CloudUserCenterServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq MUserInfoGetRequest
 	var metadata runtime.ServerMetadata
 
@@ -269,7 +269,7 @@ func local_request_Greeter_MUserInfoGet_0(ctx context.Context, marshaler runtime
 
 }
 
-func request_Greeter_UserInfoSearch_0(ctx context.Context, marshaler runtime.Marshaler, client GreeterClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_CloudUserCenter_UserInfoSearch_0(ctx context.Context, marshaler runtime.Marshaler, client CloudUserCenterClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq UserInfoSearchRequest
 	var metadata runtime.ServerMetadata
 
@@ -286,7 +286,7 @@ func request_Greeter_UserInfoSearch_0(ctx context.Context, marshaler runtime.Mar
 
 }
 
-func local_request_Greeter_UserInfoSearch_0(ctx context.Context, marshaler runtime.Marshaler, server GreeterServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_CloudUserCenter_UserInfoSearch_0(ctx context.Context, marshaler runtime.Marshaler, server CloudUserCenterServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq UserInfoSearchRequest
 	var metadata runtime.ServerMetadata
 
@@ -303,7 +303,7 @@ func local_request_Greeter_UserInfoSearch_0(ctx context.Context, marshaler runti
 
 }
 
-func request_Greeter_UserMessageCreate_0(ctx context.Context, marshaler runtime.Marshaler, client GreeterClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_CloudUserCenter_UserMessageCreate_0(ctx context.Context, marshaler runtime.Marshaler, client CloudUserCenterClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq UserMessageCreateRequest
 	var metadata runtime.ServerMetadata
 
@@ -320,7 +320,7 @@ func request_Greeter_UserMessageCreate_0(ctx context.Context, marshaler runtime.
 
 }
 
-func local_request_Greeter_UserMessageCreate_0(ctx context.Context, marshaler runtime.Marshaler, server GreeterServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_CloudUserCenter_UserMessageCreate_0(ctx context.Context, marshaler runtime.Marshaler, server CloudUserCenterServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq UserMessageCreateRequest
 	var metadata runtime.ServerMetadata
 
@@ -337,7 +337,7 @@ func local_request_Greeter_UserMessageCreate_0(ctx context.Context, marshaler ru
 
 }
 
-func request_Greeter_MUserMessageCreate_0(ctx context.Context, marshaler runtime.Marshaler, client GreeterClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_CloudUserCenter_MUserMessageCreate_0(ctx context.Context, marshaler runtime.Marshaler, client CloudUserCenterClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq MUserMessageCreateRequest
 	var metadata runtime.ServerMetadata
 
@@ -354,7 +354,7 @@ func request_Greeter_MUserMessageCreate_0(ctx context.Context, marshaler runtime
 
 }
 
-func local_request_Greeter_MUserMessageCreate_0(ctx context.Context, marshaler runtime.Marshaler, server GreeterServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_CloudUserCenter_MUserMessageCreate_0(ctx context.Context, marshaler runtime.Marshaler, server CloudUserCenterServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq MUserMessageCreateRequest
 	var metadata runtime.ServerMetadata
 
@@ -371,7 +371,7 @@ func local_request_Greeter_MUserMessageCreate_0(ctx context.Context, marshaler r
 
 }
 
-func request_Greeter_UserMessageGet_0(ctx context.Context, marshaler runtime.Marshaler, client GreeterClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_CloudUserCenter_UserMessageGet_0(ctx context.Context, marshaler runtime.Marshaler, client CloudUserCenterClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq UserMessageGetRequest
 	var metadata runtime.ServerMetadata
 
@@ -388,7 +388,7 @@ func request_Greeter_UserMessageGet_0(ctx context.Context, marshaler runtime.Mar
 
 }
 
-func local_request_Greeter_UserMessageGet_0(ctx context.Context, marshaler runtime.Marshaler, server GreeterServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_CloudUserCenter_UserMessageGet_0(ctx context.Context, marshaler runtime.Marshaler, server CloudUserCenterServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq UserMessageGetRequest
 	var metadata runtime.ServerMetadata
 
@@ -405,7 +405,7 @@ func local_request_Greeter_UserMessageGet_0(ctx context.Context, marshaler runti
 
 }
 
-func request_Greeter_UserMessageUpdate_0(ctx context.Context, marshaler runtime.Marshaler, client GreeterClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_CloudUserCenter_UserMessageUpdate_0(ctx context.Context, marshaler runtime.Marshaler, client CloudUserCenterClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq UserMessageUpdateRequest
 	var metadata runtime.ServerMetadata
 
@@ -422,7 +422,7 @@ func request_Greeter_UserMessageUpdate_0(ctx context.Context, marshaler runtime.
 
 }
 
-func local_request_Greeter_UserMessageUpdate_0(ctx context.Context, marshaler runtime.Marshaler, server GreeterServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_CloudUserCenter_UserMessageUpdate_0(ctx context.Context, marshaler runtime.Marshaler, server CloudUserCenterServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq UserMessageUpdateRequest
 	var metadata runtime.ServerMetadata
 
@@ -439,7 +439,7 @@ func local_request_Greeter_UserMessageUpdate_0(ctx context.Context, marshaler ru
 
 }
 
-func request_Greeter_UserMessageDelete_0(ctx context.Context, marshaler runtime.Marshaler, client GreeterClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_CloudUserCenter_UserMessageDelete_0(ctx context.Context, marshaler runtime.Marshaler, client CloudUserCenterClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq UserMessageDeleteRequest
 	var metadata runtime.ServerMetadata
 
@@ -456,7 +456,7 @@ func request_Greeter_UserMessageDelete_0(ctx context.Context, marshaler runtime.
 
 }
 
-func local_request_Greeter_UserMessageDelete_0(ctx context.Context, marshaler runtime.Marshaler, server GreeterServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_CloudUserCenter_UserMessageDelete_0(ctx context.Context, marshaler runtime.Marshaler, server CloudUserCenterServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq UserMessageDeleteRequest
 	var metadata runtime.ServerMetadata
 
@@ -473,25 +473,25 @@ func local_request_Greeter_UserMessageDelete_0(ctx context.Context, marshaler ru
 
 }
 
-// RegisterGreeterHandlerServer registers the http handlers for service Greeter to "mux".
-// UnaryRPC     :call GreeterServer directly.
+// RegisterCloudUserCenterHandlerServer registers the http handlers for service CloudUserCenter to "mux".
+// UnaryRPC     :call CloudUserCenterServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
-// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterGreeterHandlerFromEndpoint instead.
-func RegisterGreeterHandlerServer(ctx context.Context, mux *runtime.ServeMux, server GreeterServer) error {
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterCloudUserCenterHandlerFromEndpoint instead.
+func RegisterCloudUserCenterHandlerServer(ctx context.Context, mux *runtime.ServeMux, server CloudUserCenterServer) error {
 
-	mux.Handle("POST", pattern_Greeter_SayHello_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudUserCenter_SayHello_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
-		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud_user_center.Greeter/SayHello", runtime.WithHTTPPathPattern("/v1/example/echo"))
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud_user_center.CloudUserCenter/SayHello", runtime.WithHTTPPathPattern("/v1/example/echo"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Greeter_SayHello_0(ctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudUserCenter_SayHello_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -499,23 +499,23 @@ func RegisterGreeterHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_Greeter_SayHello_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudUserCenter_SayHello_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_Greeter_UserInfoCreate_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudUserCenter_UserInfoCreate_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
-		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud_user_center.Greeter/UserInfoCreate", runtime.WithHTTPPathPattern("/user/create"))
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud_user_center.CloudUserCenter/UserInfoCreate", runtime.WithHTTPPathPattern("/user/create"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Greeter_UserInfoCreate_0(ctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudUserCenter_UserInfoCreate_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -523,23 +523,23 @@ func RegisterGreeterHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_Greeter_UserInfoCreate_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudUserCenter_UserInfoCreate_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_Greeter_UserInfoAuth_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudUserCenter_UserInfoAuth_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
-		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud_user_center.Greeter/UserInfoAuth", runtime.WithHTTPPathPattern("/user/auth"))
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud_user_center.CloudUserCenter/UserInfoAuth", runtime.WithHTTPPathPattern("/user/auth"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Greeter_UserInfoAuth_0(ctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudUserCenter_UserInfoAuth_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -547,23 +547,23 @@ func RegisterGreeterHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_Greeter_UserInfoAuth_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudUserCenter_UserInfoAuth_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_Greeter_UserInfoUpdate_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudUserCenter_UserInfoUpdate_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
-		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud_user_center.Greeter/UserInfoUpdate", runtime.WithHTTPPathPattern("/user/update"))
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud_user_center.CloudUserCenter/UserInfoUpdate", runtime.WithHTTPPathPattern("/user/update"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Greeter_UserInfoUpdate_0(ctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudUserCenter_UserInfoUpdate_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -571,23 +571,23 @@ func RegisterGreeterHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_Greeter_UserInfoUpdate_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudUserCenter_UserInfoUpdate_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_Greeter_UserInfoDelete_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudUserCenter_UserInfoDelete_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
-		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud_user_center.Greeter/UserInfoDelete", runtime.WithHTTPPathPattern("/user/delete"))
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud_user_center.CloudUserCenter/UserInfoDelete", runtime.WithHTTPPathPattern("/user/delete"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Greeter_UserInfoDelete_0(ctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudUserCenter_UserInfoDelete_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -595,23 +595,23 @@ func RegisterGreeterHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_Greeter_UserInfoDelete_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudUserCenter_UserInfoDelete_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_Greeter_UserInfoGet_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudUserCenter_UserInfoGet_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
-		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud_user_center.Greeter/UserInfoGet", runtime.WithHTTPPathPattern("/user/get"))
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud_user_center.CloudUserCenter/UserInfoGet", runtime.WithHTTPPathPattern("/user/get"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Greeter_UserInfoGet_0(ctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudUserCenter_UserInfoGet_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -619,23 +619,23 @@ func RegisterGreeterHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_Greeter_UserInfoGet_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudUserCenter_UserInfoGet_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_Greeter_MUserInfoGet_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudUserCenter_MUserInfoGet_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
-		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud_user_center.Greeter/MUserInfoGet", runtime.WithHTTPPathPattern("/user/m_get"))
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud_user_center.CloudUserCenter/MUserInfoGet", runtime.WithHTTPPathPattern("/user/m_get"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Greeter_MUserInfoGet_0(ctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudUserCenter_MUserInfoGet_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -643,23 +643,23 @@ func RegisterGreeterHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_Greeter_MUserInfoGet_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudUserCenter_MUserInfoGet_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_Greeter_UserInfoSearch_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudUserCenter_UserInfoSearch_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
-		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud_user_center.Greeter/UserInfoSearch", runtime.WithHTTPPathPattern("/user/search"))
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud_user_center.CloudUserCenter/UserInfoSearch", runtime.WithHTTPPathPattern("/user/search"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Greeter_UserInfoSearch_0(ctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudUserCenter_UserInfoSearch_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -667,23 +667,23 @@ func RegisterGreeterHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_Greeter_UserInfoSearch_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudUserCenter_UserInfoSearch_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_Greeter_UserMessageCreate_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudUserCenter_UserMessageCreate_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
-		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud_user_center.Greeter/UserMessageCreate", runtime.WithHTTPPathPattern("/user/message/create"))
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud_user_center.CloudUserCenter/UserMessageCreate", runtime.WithHTTPPathPattern("/user/message/create"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Greeter_UserMessageCreate_0(ctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudUserCenter_UserMessageCreate_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -691,23 +691,23 @@ func RegisterGreeterHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_Greeter_UserMessageCreate_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudUserCenter_UserMessageCreate_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_Greeter_MUserMessageCreate_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudUserCenter_MUserMessageCreate_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
-		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud_user_center.Greeter/MUserMessageCreate", runtime.WithHTTPPathPattern("/user/message/m_create"))
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud_user_center.CloudUserCenter/MUserMessageCreate", runtime.WithHTTPPathPattern("/user/message/m_create"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Greeter_MUserMessageCreate_0(ctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudUserCenter_MUserMessageCreate_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -715,23 +715,23 @@ func RegisterGreeterHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_Greeter_MUserMessageCreate_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudUserCenter_MUserMessageCreate_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_Greeter_UserMessageGet_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudUserCenter_UserMessageGet_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
-		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud_user_center.Greeter/UserMessageGet", runtime.WithHTTPPathPattern("/user/message/get"))
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud_user_center.CloudUserCenter/UserMessageGet", runtime.WithHTTPPathPattern("/user/message/get"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Greeter_UserMessageGet_0(ctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudUserCenter_UserMessageGet_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -739,23 +739,23 @@ func RegisterGreeterHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_Greeter_UserMessageGet_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudUserCenter_UserMessageGet_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_Greeter_UserMessageUpdate_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudUserCenter_UserMessageUpdate_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
-		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud_user_center.Greeter/UserMessageUpdate", runtime.WithHTTPPathPattern("/user/message/update"))
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud_user_center.CloudUserCenter/UserMessageUpdate", runtime.WithHTTPPathPattern("/user/message/update"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Greeter_UserMessageUpdate_0(ctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudUserCenter_UserMessageUpdate_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -763,23 +763,23 @@ func RegisterGreeterHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_Greeter_UserMessageUpdate_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudUserCenter_UserMessageUpdate_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_Greeter_UserMessageDelete_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudUserCenter_UserMessageDelete_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
-		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud_user_center.Greeter/UserMessageDelete", runtime.WithHTTPPathPattern("/user/message/delete"))
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud_user_center.CloudUserCenter/UserMessageDelete", runtime.WithHTTPPathPattern("/user/message/delete"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Greeter_UserMessageDelete_0(ctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudUserCenter_UserMessageDelete_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -787,16 +787,16 @@ func RegisterGreeterHandlerServer(ctx context.Context, mux *runtime.ServeMux, se
 			return
 		}
 
-		forward_Greeter_UserMessageDelete_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudUserCenter_UserMessageDelete_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
 	return nil
 }
 
-// RegisterGreeterHandlerFromEndpoint is same as RegisterGreeterHandler but
+// RegisterCloudUserCenterHandlerFromEndpoint is same as RegisterCloudUserCenterHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
-func RegisterGreeterHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
+func RegisterCloudUserCenterHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
 	conn, err := grpc.Dial(endpoint, opts...)
 	if err != nil {
 		return err
@@ -816,292 +816,292 @@ func RegisterGreeterHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeM
 		}()
 	}()
 
-	return RegisterGreeterHandler(ctx, mux, conn)
+	return RegisterCloudUserCenterHandler(ctx, mux, conn)
 }
 
-// RegisterGreeterHandler registers the http handlers for service Greeter to "mux".
+// RegisterCloudUserCenterHandler registers the http handlers for service CloudUserCenter to "mux".
 // The handlers forward requests to the grpc endpoint over "conn".
-func RegisterGreeterHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
-	return RegisterGreeterHandlerClient(ctx, mux, NewGreeterClient(conn))
+func RegisterCloudUserCenterHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
+	return RegisterCloudUserCenterHandlerClient(ctx, mux, NewCloudUserCenterClient(conn))
 }
 
-// RegisterGreeterHandlerClient registers the http handlers for service Greeter
-// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "GreeterClient".
-// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "GreeterClient"
+// RegisterCloudUserCenterHandlerClient registers the http handlers for service CloudUserCenter
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "CloudUserCenterClient".
+// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "CloudUserCenterClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
-// "GreeterClient" to call the correct interceptors.
-func RegisterGreeterHandlerClient(ctx context.Context, mux *runtime.ServeMux, client GreeterClient) error {
+// "CloudUserCenterClient" to call the correct interceptors.
+func RegisterCloudUserCenterHandlerClient(ctx context.Context, mux *runtime.ServeMux, client CloudUserCenterClient) error {
 
-	mux.Handle("POST", pattern_Greeter_SayHello_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudUserCenter_SayHello_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
-		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/cloud_user_center.Greeter/SayHello", runtime.WithHTTPPathPattern("/v1/example/echo"))
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/cloud_user_center.CloudUserCenter/SayHello", runtime.WithHTTPPathPattern("/v1/example/echo"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Greeter_SayHello_0(ctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudUserCenter_SayHello_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Greeter_SayHello_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudUserCenter_SayHello_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_Greeter_UserInfoCreate_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudUserCenter_UserInfoCreate_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
-		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/cloud_user_center.Greeter/UserInfoCreate", runtime.WithHTTPPathPattern("/user/create"))
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/cloud_user_center.CloudUserCenter/UserInfoCreate", runtime.WithHTTPPathPattern("/user/create"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Greeter_UserInfoCreate_0(ctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudUserCenter_UserInfoCreate_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Greeter_UserInfoCreate_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudUserCenter_UserInfoCreate_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_Greeter_UserInfoAuth_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudUserCenter_UserInfoAuth_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
-		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/cloud_user_center.Greeter/UserInfoAuth", runtime.WithHTTPPathPattern("/user/auth"))
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/cloud_user_center.CloudUserCenter/UserInfoAuth", runtime.WithHTTPPathPattern("/user/auth"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Greeter_UserInfoAuth_0(ctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudUserCenter_UserInfoAuth_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Greeter_UserInfoAuth_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudUserCenter_UserInfoAuth_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_Greeter_UserInfoUpdate_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudUserCenter_UserInfoUpdate_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
-		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/cloud_user_center.Greeter/UserInfoUpdate", runtime.WithHTTPPathPattern("/user/update"))
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/cloud_user_center.CloudUserCenter/UserInfoUpdate", runtime.WithHTTPPathPattern("/user/update"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Greeter_UserInfoUpdate_0(ctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudUserCenter_UserInfoUpdate_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Greeter_UserInfoUpdate_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudUserCenter_UserInfoUpdate_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_Greeter_UserInfoDelete_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudUserCenter_UserInfoDelete_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
-		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/cloud_user_center.Greeter/UserInfoDelete", runtime.WithHTTPPathPattern("/user/delete"))
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/cloud_user_center.CloudUserCenter/UserInfoDelete", runtime.WithHTTPPathPattern("/user/delete"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Greeter_UserInfoDelete_0(ctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudUserCenter_UserInfoDelete_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Greeter_UserInfoDelete_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudUserCenter_UserInfoDelete_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_Greeter_UserInfoGet_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudUserCenter_UserInfoGet_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
-		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/cloud_user_center.Greeter/UserInfoGet", runtime.WithHTTPPathPattern("/user/get"))
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/cloud_user_center.CloudUserCenter/UserInfoGet", runtime.WithHTTPPathPattern("/user/get"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Greeter_UserInfoGet_0(ctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudUserCenter_UserInfoGet_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Greeter_UserInfoGet_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudUserCenter_UserInfoGet_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_Greeter_MUserInfoGet_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudUserCenter_MUserInfoGet_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
-		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/cloud_user_center.Greeter/MUserInfoGet", runtime.WithHTTPPathPattern("/user/m_get"))
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/cloud_user_center.CloudUserCenter/MUserInfoGet", runtime.WithHTTPPathPattern("/user/m_get"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Greeter_MUserInfoGet_0(ctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudUserCenter_MUserInfoGet_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Greeter_MUserInfoGet_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudUserCenter_MUserInfoGet_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_Greeter_UserInfoSearch_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudUserCenter_UserInfoSearch_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
-		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/cloud_user_center.Greeter/UserInfoSearch", runtime.WithHTTPPathPattern("/user/search"))
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/cloud_user_center.CloudUserCenter/UserInfoSearch", runtime.WithHTTPPathPattern("/user/search"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Greeter_UserInfoSearch_0(ctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudUserCenter_UserInfoSearch_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Greeter_UserInfoSearch_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudUserCenter_UserInfoSearch_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_Greeter_UserMessageCreate_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudUserCenter_UserMessageCreate_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
-		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/cloud_user_center.Greeter/UserMessageCreate", runtime.WithHTTPPathPattern("/user/message/create"))
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/cloud_user_center.CloudUserCenter/UserMessageCreate", runtime.WithHTTPPathPattern("/user/message/create"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Greeter_UserMessageCreate_0(ctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudUserCenter_UserMessageCreate_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Greeter_UserMessageCreate_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudUserCenter_UserMessageCreate_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_Greeter_MUserMessageCreate_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudUserCenter_MUserMessageCreate_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
-		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/cloud_user_center.Greeter/MUserMessageCreate", runtime.WithHTTPPathPattern("/user/message/m_create"))
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/cloud_user_center.CloudUserCenter/MUserMessageCreate", runtime.WithHTTPPathPattern("/user/message/m_create"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Greeter_MUserMessageCreate_0(ctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudUserCenter_MUserMessageCreate_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Greeter_MUserMessageCreate_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudUserCenter_MUserMessageCreate_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_Greeter_UserMessageGet_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudUserCenter_UserMessageGet_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
-		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/cloud_user_center.Greeter/UserMessageGet", runtime.WithHTTPPathPattern("/user/message/get"))
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/cloud_user_center.CloudUserCenter/UserMessageGet", runtime.WithHTTPPathPattern("/user/message/get"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Greeter_UserMessageGet_0(ctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudUserCenter_UserMessageGet_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Greeter_UserMessageGet_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudUserCenter_UserMessageGet_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_Greeter_UserMessageUpdate_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudUserCenter_UserMessageUpdate_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
-		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/cloud_user_center.Greeter/UserMessageUpdate", runtime.WithHTTPPathPattern("/user/message/update"))
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/cloud_user_center.CloudUserCenter/UserMessageUpdate", runtime.WithHTTPPathPattern("/user/message/update"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Greeter_UserMessageUpdate_0(ctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudUserCenter_UserMessageUpdate_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Greeter_UserMessageUpdate_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudUserCenter_UserMessageUpdate_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_Greeter_UserMessageDelete_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudUserCenter_UserMessageDelete_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
-		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/cloud_user_center.Greeter/UserMessageDelete", runtime.WithHTTPPathPattern("/user/message/delete"))
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/cloud_user_center.CloudUserCenter/UserMessageDelete", runtime.WithHTTPPathPattern("/user/message/delete"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Greeter_UserMessageDelete_0(ctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudUserCenter_UserMessageDelete_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Greeter_UserMessageDelete_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudUserCenter_UserMessageDelete_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -1109,57 +1109,57 @@ func RegisterGreeterHandlerClient(ctx context.Context, mux *runtime.ServeMux, cl
 }
 
 var (
-	pattern_Greeter_SayHello_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "example", "echo"}, ""))
+	pattern_CloudUserCenter_SayHello_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "example", "echo"}, ""))
 
-	pattern_Greeter_UserInfoCreate_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"user", "create"}, ""))
+	pattern_CloudUserCenter_UserInfoCreate_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"user", "create"}, ""))
 
-	pattern_Greeter_UserInfoAuth_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"user", "auth"}, ""))
+	pattern_CloudUserCenter_UserInfoAuth_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"user", "auth"}, ""))
 
-	pattern_Greeter_UserInfoUpdate_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"user", "update"}, ""))
+	pattern_CloudUserCenter_UserInfoUpdate_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"user", "update"}, ""))
 
-	pattern_Greeter_UserInfoDelete_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"user", "delete"}, ""))
+	pattern_CloudUserCenter_UserInfoDelete_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"user", "delete"}, ""))
 
-	pattern_Greeter_UserInfoGet_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"user", "get"}, ""))
+	pattern_CloudUserCenter_UserInfoGet_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"user", "get"}, ""))
 
-	pattern_Greeter_MUserInfoGet_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"user", "m_get"}, ""))
+	pattern_CloudUserCenter_MUserInfoGet_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"user", "m_get"}, ""))
 
-	pattern_Greeter_UserInfoSearch_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"user", "search"}, ""))
+	pattern_CloudUserCenter_UserInfoSearch_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"user", "search"}, ""))
 
-	pattern_Greeter_UserMessageCreate_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"user", "message", "create"}, ""))
+	pattern_CloudUserCenter_UserMessageCreate_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"user", "message", "create"}, ""))
 
-	pattern_Greeter_MUserMessageCreate_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"user", "message", "m_create"}, ""))
+	pattern_CloudUserCenter_MUserMessageCreate_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"user", "message", "m_create"}, ""))
 
-	pattern_Greeter_UserMessageGet_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"user", "message", "get"}, ""))
+	pattern_CloudUserCenter_UserMessageGet_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"user", "message", "get"}, ""))
 
-	pattern_Greeter_UserMessageUpdate_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"user", "message", "update"}, ""))
+	pattern_CloudUserCenter_UserMessageUpdate_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"user", "message", "update"}, ""))
 
-	pattern_Greeter_UserMessageDelete_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"user", "message", "delete"}, ""))
+	pattern_CloudUserCenter_UserMessageDelete_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"user", "message", "delete"}, ""))
 )
 
 var (
-	forward_Greeter_SayHello_0 = runtime.ForwardResponseMessage
+	forward_CloudUserCenter_SayHello_0 = runtime.ForwardResponseMessage
 
-	forward_Greeter_UserInfoCreate_0 = runtime.ForwardResponseMessage
+	forward_CloudUserCenter_UserInfoCreate_0 = runtime.ForwardResponseMessage
 
-	forward_Greeter_UserInfoAuth_0 = runtime.ForwardResponseMessage
+	forward_CloudUserCenter_UserInfoAuth_0 = runtime.ForwardResponseMessage
 
-	forward_Greeter_UserInfoUpdate_0 = runtime.ForwardResponseMessage
+	forward_CloudUserCenter_UserInfoUpdate_0 = runtime.ForwardResponseMessage
 
-	forward_Greeter_UserInfoDelete_0 = runtime.ForwardResponseMessage
+	forward_CloudUserCenter_UserInfoDelete_0 = runtime.ForwardResponseMessage
 
-	forward_Greeter_UserInfoGet_0 = runtime.ForwardResponseMessage
+	forward_CloudUserCenter_UserInfoGet_0 = runtime.ForwardResponseMessage
 
-	forward_Greeter_MUserInfoGet_0 = runtime.ForwardResponseMessage
+	forward_CloudUserCenter_MUserInfoGet_0 = runtime.ForwardResponseMessage
 
-	forward_Greeter_UserInfoSearch_0 = runtime.ForwardResponseMessage
+	forward_CloudUserCenter_UserInfoSearch_0 = runtime.ForwardResponseMessage
 
-	forward_Greeter_UserMessageCreate_0 = runtime.ForwardResponseMessage
+	forward_CloudUserCenter_UserMessageCreate_0 = runtime.ForwardResponseMessage
 
-	forward_Greeter_MUserMessageCreate_0 = runtime.ForwardResponseMessage
+	forward_CloudUserCenter_MUserMessageCreate_0 = runtime.ForwardResponseMessage
 
-	forward_Greeter_UserMessageGet_0 = runtime.ForwardResponseMessage
+	forward_CloudUserCenter_UserMessageGet_0 = runtime.ForwardResponseMessage
 
-	forward_Greeter_UserMessageUpdate_0 = runtime.ForwardResponseMessage
+	forward_CloudUserCenter_UserMessageUpdate_0 = runtime.ForwardResponseMessage
 
-	forward_Greeter_UserMessageDelete_0 = runtime.ForwardResponseMessage
+	forward_CloudUserCenter_UserMessageDelete_0 = runtime.ForwardResponseMessage
 )

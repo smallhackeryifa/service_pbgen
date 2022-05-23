@@ -18,10 +18,10 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// GreeterClient is the client API for Greeter service.
+// CloudUserCenterClient is the client API for CloudUserCenter service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type GreeterClient interface {
+type CloudUserCenterClient interface {
 	// Sends a greeting
 	SayHello(ctx context.Context, in *HelloRequest, opts ...grpc.CallOption) (*HelloReply, error)
 	// 创建用户
@@ -50,135 +50,135 @@ type GreeterClient interface {
 	UserMessageDelete(ctx context.Context, in *UserMessageDeleteRequest, opts ...grpc.CallOption) (*UserMessageDeleteResponse, error)
 }
 
-type greeterClient struct {
+type cloudUserCenterClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewGreeterClient(cc grpc.ClientConnInterface) GreeterClient {
-	return &greeterClient{cc}
+func NewCloudUserCenterClient(cc grpc.ClientConnInterface) CloudUserCenterClient {
+	return &cloudUserCenterClient{cc}
 }
 
-func (c *greeterClient) SayHello(ctx context.Context, in *HelloRequest, opts ...grpc.CallOption) (*HelloReply, error) {
+func (c *cloudUserCenterClient) SayHello(ctx context.Context, in *HelloRequest, opts ...grpc.CallOption) (*HelloReply, error) {
 	out := new(HelloReply)
-	err := c.cc.Invoke(ctx, "/cloud_user_center.Greeter/SayHello", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/cloud_user_center.CloudUserCenter/SayHello", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *greeterClient) UserInfoCreate(ctx context.Context, in *UserInfoCreateRequest, opts ...grpc.CallOption) (*UserInfoCreateResponse, error) {
+func (c *cloudUserCenterClient) UserInfoCreate(ctx context.Context, in *UserInfoCreateRequest, opts ...grpc.CallOption) (*UserInfoCreateResponse, error) {
 	out := new(UserInfoCreateResponse)
-	err := c.cc.Invoke(ctx, "/cloud_user_center.Greeter/UserInfoCreate", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/cloud_user_center.CloudUserCenter/UserInfoCreate", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *greeterClient) UserInfoAuth(ctx context.Context, in *UserInfoAuthRequest, opts ...grpc.CallOption) (*UserInfoAuthResponse, error) {
+func (c *cloudUserCenterClient) UserInfoAuth(ctx context.Context, in *UserInfoAuthRequest, opts ...grpc.CallOption) (*UserInfoAuthResponse, error) {
 	out := new(UserInfoAuthResponse)
-	err := c.cc.Invoke(ctx, "/cloud_user_center.Greeter/UserInfoAuth", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/cloud_user_center.CloudUserCenter/UserInfoAuth", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *greeterClient) UserInfoUpdate(ctx context.Context, in *UserInfoUpdateRequest, opts ...grpc.CallOption) (*UserInfoUpdateResponse, error) {
+func (c *cloudUserCenterClient) UserInfoUpdate(ctx context.Context, in *UserInfoUpdateRequest, opts ...grpc.CallOption) (*UserInfoUpdateResponse, error) {
 	out := new(UserInfoUpdateResponse)
-	err := c.cc.Invoke(ctx, "/cloud_user_center.Greeter/UserInfoUpdate", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/cloud_user_center.CloudUserCenter/UserInfoUpdate", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *greeterClient) UserInfoDelete(ctx context.Context, in *UserInfoDeleteRequest, opts ...grpc.CallOption) (*UserInfoDeleteResponse, error) {
+func (c *cloudUserCenterClient) UserInfoDelete(ctx context.Context, in *UserInfoDeleteRequest, opts ...grpc.CallOption) (*UserInfoDeleteResponse, error) {
 	out := new(UserInfoDeleteResponse)
-	err := c.cc.Invoke(ctx, "/cloud_user_center.Greeter/UserInfoDelete", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/cloud_user_center.CloudUserCenter/UserInfoDelete", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *greeterClient) UserInfoGet(ctx context.Context, in *UserInfoGetRequest, opts ...grpc.CallOption) (*UserInfoGetResponse, error) {
+func (c *cloudUserCenterClient) UserInfoGet(ctx context.Context, in *UserInfoGetRequest, opts ...grpc.CallOption) (*UserInfoGetResponse, error) {
 	out := new(UserInfoGetResponse)
-	err := c.cc.Invoke(ctx, "/cloud_user_center.Greeter/UserInfoGet", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/cloud_user_center.CloudUserCenter/UserInfoGet", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *greeterClient) MUserInfoGet(ctx context.Context, in *MUserInfoGetRequest, opts ...grpc.CallOption) (*MUserInfoGetResponse, error) {
+func (c *cloudUserCenterClient) MUserInfoGet(ctx context.Context, in *MUserInfoGetRequest, opts ...grpc.CallOption) (*MUserInfoGetResponse, error) {
 	out := new(MUserInfoGetResponse)
-	err := c.cc.Invoke(ctx, "/cloud_user_center.Greeter/MUserInfoGet", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/cloud_user_center.CloudUserCenter/MUserInfoGet", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *greeterClient) UserInfoSearch(ctx context.Context, in *UserInfoSearchRequest, opts ...grpc.CallOption) (*UserInfoSearchResponse, error) {
+func (c *cloudUserCenterClient) UserInfoSearch(ctx context.Context, in *UserInfoSearchRequest, opts ...grpc.CallOption) (*UserInfoSearchResponse, error) {
 	out := new(UserInfoSearchResponse)
-	err := c.cc.Invoke(ctx, "/cloud_user_center.Greeter/UserInfoSearch", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/cloud_user_center.CloudUserCenter/UserInfoSearch", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *greeterClient) UserMessageCreate(ctx context.Context, in *UserMessageCreateRequest, opts ...grpc.CallOption) (*UserMessageCreateResponse, error) {
+func (c *cloudUserCenterClient) UserMessageCreate(ctx context.Context, in *UserMessageCreateRequest, opts ...grpc.CallOption) (*UserMessageCreateResponse, error) {
 	out := new(UserMessageCreateResponse)
-	err := c.cc.Invoke(ctx, "/cloud_user_center.Greeter/UserMessageCreate", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/cloud_user_center.CloudUserCenter/UserMessageCreate", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *greeterClient) MUserMessageCreate(ctx context.Context, in *MUserMessageCreateRequest, opts ...grpc.CallOption) (*MUserMessageCreateResponse, error) {
+func (c *cloudUserCenterClient) MUserMessageCreate(ctx context.Context, in *MUserMessageCreateRequest, opts ...grpc.CallOption) (*MUserMessageCreateResponse, error) {
 	out := new(MUserMessageCreateResponse)
-	err := c.cc.Invoke(ctx, "/cloud_user_center.Greeter/MUserMessageCreate", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/cloud_user_center.CloudUserCenter/MUserMessageCreate", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *greeterClient) UserMessageGet(ctx context.Context, in *UserMessageGetRequest, opts ...grpc.CallOption) (*UserMessageGetResponse, error) {
+func (c *cloudUserCenterClient) UserMessageGet(ctx context.Context, in *UserMessageGetRequest, opts ...grpc.CallOption) (*UserMessageGetResponse, error) {
 	out := new(UserMessageGetResponse)
-	err := c.cc.Invoke(ctx, "/cloud_user_center.Greeter/UserMessageGet", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/cloud_user_center.CloudUserCenter/UserMessageGet", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *greeterClient) UserMessageUpdate(ctx context.Context, in *UserMessageUpdateRequest, opts ...grpc.CallOption) (*UserMessageUpdateResponse, error) {
+func (c *cloudUserCenterClient) UserMessageUpdate(ctx context.Context, in *UserMessageUpdateRequest, opts ...grpc.CallOption) (*UserMessageUpdateResponse, error) {
 	out := new(UserMessageUpdateResponse)
-	err := c.cc.Invoke(ctx, "/cloud_user_center.Greeter/UserMessageUpdate", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/cloud_user_center.CloudUserCenter/UserMessageUpdate", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *greeterClient) UserMessageDelete(ctx context.Context, in *UserMessageDeleteRequest, opts ...grpc.CallOption) (*UserMessageDeleteResponse, error) {
+func (c *cloudUserCenterClient) UserMessageDelete(ctx context.Context, in *UserMessageDeleteRequest, opts ...grpc.CallOption) (*UserMessageDeleteResponse, error) {
 	out := new(UserMessageDeleteResponse)
-	err := c.cc.Invoke(ctx, "/cloud_user_center.Greeter/UserMessageDelete", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/cloud_user_center.CloudUserCenter/UserMessageDelete", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// GreeterServer is the server API for Greeter service.
-// All implementations must embed UnimplementedGreeterServer
+// CloudUserCenterServer is the server API for CloudUserCenter service.
+// All implementations must embed UnimplementedCloudUserCenterServer
 // for forward compatibility
-type GreeterServer interface {
+type CloudUserCenterServer interface {
 	// Sends a greeting
 	SayHello(context.Context, *HelloRequest) (*HelloReply, error)
 	// 创建用户
@@ -205,357 +205,357 @@ type GreeterServer interface {
 	UserMessageUpdate(context.Context, *UserMessageUpdateRequest) (*UserMessageUpdateResponse, error)
 	// 用户消息删除
 	UserMessageDelete(context.Context, *UserMessageDeleteRequest) (*UserMessageDeleteResponse, error)
-	mustEmbedUnimplementedGreeterServer()
+	mustEmbedUnimplementedCloudUserCenterServer()
 }
 
-// UnimplementedGreeterServer must be embedded to have forward compatible implementations.
-type UnimplementedGreeterServer struct {
+// UnimplementedCloudUserCenterServer must be embedded to have forward compatible implementations.
+type UnimplementedCloudUserCenterServer struct {
 }
 
-func (UnimplementedGreeterServer) SayHello(context.Context, *HelloRequest) (*HelloReply, error) {
+func (UnimplementedCloudUserCenterServer) SayHello(context.Context, *HelloRequest) (*HelloReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SayHello not implemented")
 }
-func (UnimplementedGreeterServer) UserInfoCreate(context.Context, *UserInfoCreateRequest) (*UserInfoCreateResponse, error) {
+func (UnimplementedCloudUserCenterServer) UserInfoCreate(context.Context, *UserInfoCreateRequest) (*UserInfoCreateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UserInfoCreate not implemented")
 }
-func (UnimplementedGreeterServer) UserInfoAuth(context.Context, *UserInfoAuthRequest) (*UserInfoAuthResponse, error) {
+func (UnimplementedCloudUserCenterServer) UserInfoAuth(context.Context, *UserInfoAuthRequest) (*UserInfoAuthResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UserInfoAuth not implemented")
 }
-func (UnimplementedGreeterServer) UserInfoUpdate(context.Context, *UserInfoUpdateRequest) (*UserInfoUpdateResponse, error) {
+func (UnimplementedCloudUserCenterServer) UserInfoUpdate(context.Context, *UserInfoUpdateRequest) (*UserInfoUpdateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UserInfoUpdate not implemented")
 }
-func (UnimplementedGreeterServer) UserInfoDelete(context.Context, *UserInfoDeleteRequest) (*UserInfoDeleteResponse, error) {
+func (UnimplementedCloudUserCenterServer) UserInfoDelete(context.Context, *UserInfoDeleteRequest) (*UserInfoDeleteResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UserInfoDelete not implemented")
 }
-func (UnimplementedGreeterServer) UserInfoGet(context.Context, *UserInfoGetRequest) (*UserInfoGetResponse, error) {
+func (UnimplementedCloudUserCenterServer) UserInfoGet(context.Context, *UserInfoGetRequest) (*UserInfoGetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UserInfoGet not implemented")
 }
-func (UnimplementedGreeterServer) MUserInfoGet(context.Context, *MUserInfoGetRequest) (*MUserInfoGetResponse, error) {
+func (UnimplementedCloudUserCenterServer) MUserInfoGet(context.Context, *MUserInfoGetRequest) (*MUserInfoGetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MUserInfoGet not implemented")
 }
-func (UnimplementedGreeterServer) UserInfoSearch(context.Context, *UserInfoSearchRequest) (*UserInfoSearchResponse, error) {
+func (UnimplementedCloudUserCenterServer) UserInfoSearch(context.Context, *UserInfoSearchRequest) (*UserInfoSearchResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UserInfoSearch not implemented")
 }
-func (UnimplementedGreeterServer) UserMessageCreate(context.Context, *UserMessageCreateRequest) (*UserMessageCreateResponse, error) {
+func (UnimplementedCloudUserCenterServer) UserMessageCreate(context.Context, *UserMessageCreateRequest) (*UserMessageCreateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UserMessageCreate not implemented")
 }
-func (UnimplementedGreeterServer) MUserMessageCreate(context.Context, *MUserMessageCreateRequest) (*MUserMessageCreateResponse, error) {
+func (UnimplementedCloudUserCenterServer) MUserMessageCreate(context.Context, *MUserMessageCreateRequest) (*MUserMessageCreateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MUserMessageCreate not implemented")
 }
-func (UnimplementedGreeterServer) UserMessageGet(context.Context, *UserMessageGetRequest) (*UserMessageGetResponse, error) {
+func (UnimplementedCloudUserCenterServer) UserMessageGet(context.Context, *UserMessageGetRequest) (*UserMessageGetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UserMessageGet not implemented")
 }
-func (UnimplementedGreeterServer) UserMessageUpdate(context.Context, *UserMessageUpdateRequest) (*UserMessageUpdateResponse, error) {
+func (UnimplementedCloudUserCenterServer) UserMessageUpdate(context.Context, *UserMessageUpdateRequest) (*UserMessageUpdateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UserMessageUpdate not implemented")
 }
-func (UnimplementedGreeterServer) UserMessageDelete(context.Context, *UserMessageDeleteRequest) (*UserMessageDeleteResponse, error) {
+func (UnimplementedCloudUserCenterServer) UserMessageDelete(context.Context, *UserMessageDeleteRequest) (*UserMessageDeleteResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UserMessageDelete not implemented")
 }
-func (UnimplementedGreeterServer) mustEmbedUnimplementedGreeterServer() {}
+func (UnimplementedCloudUserCenterServer) mustEmbedUnimplementedCloudUserCenterServer() {}
 
-// UnsafeGreeterServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to GreeterServer will
+// UnsafeCloudUserCenterServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to CloudUserCenterServer will
 // result in compilation errors.
-type UnsafeGreeterServer interface {
-	mustEmbedUnimplementedGreeterServer()
+type UnsafeCloudUserCenterServer interface {
+	mustEmbedUnimplementedCloudUserCenterServer()
 }
 
-func RegisterGreeterServer(s grpc.ServiceRegistrar, srv GreeterServer) {
-	s.RegisterService(&Greeter_ServiceDesc, srv)
+func RegisterCloudUserCenterServer(s grpc.ServiceRegistrar, srv CloudUserCenterServer) {
+	s.RegisterService(&CloudUserCenter_ServiceDesc, srv)
 }
 
-func _Greeter_SayHello_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CloudUserCenter_SayHello_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(HelloRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GreeterServer).SayHello(ctx, in)
+		return srv.(CloudUserCenterServer).SayHello(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/cloud_user_center.Greeter/SayHello",
+		FullMethod: "/cloud_user_center.CloudUserCenter/SayHello",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GreeterServer).SayHello(ctx, req.(*HelloRequest))
+		return srv.(CloudUserCenterServer).SayHello(ctx, req.(*HelloRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Greeter_UserInfoCreate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CloudUserCenter_UserInfoCreate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UserInfoCreateRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GreeterServer).UserInfoCreate(ctx, in)
+		return srv.(CloudUserCenterServer).UserInfoCreate(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/cloud_user_center.Greeter/UserInfoCreate",
+		FullMethod: "/cloud_user_center.CloudUserCenter/UserInfoCreate",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GreeterServer).UserInfoCreate(ctx, req.(*UserInfoCreateRequest))
+		return srv.(CloudUserCenterServer).UserInfoCreate(ctx, req.(*UserInfoCreateRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Greeter_UserInfoAuth_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CloudUserCenter_UserInfoAuth_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UserInfoAuthRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GreeterServer).UserInfoAuth(ctx, in)
+		return srv.(CloudUserCenterServer).UserInfoAuth(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/cloud_user_center.Greeter/UserInfoAuth",
+		FullMethod: "/cloud_user_center.CloudUserCenter/UserInfoAuth",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GreeterServer).UserInfoAuth(ctx, req.(*UserInfoAuthRequest))
+		return srv.(CloudUserCenterServer).UserInfoAuth(ctx, req.(*UserInfoAuthRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Greeter_UserInfoUpdate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CloudUserCenter_UserInfoUpdate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UserInfoUpdateRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GreeterServer).UserInfoUpdate(ctx, in)
+		return srv.(CloudUserCenterServer).UserInfoUpdate(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/cloud_user_center.Greeter/UserInfoUpdate",
+		FullMethod: "/cloud_user_center.CloudUserCenter/UserInfoUpdate",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GreeterServer).UserInfoUpdate(ctx, req.(*UserInfoUpdateRequest))
+		return srv.(CloudUserCenterServer).UserInfoUpdate(ctx, req.(*UserInfoUpdateRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Greeter_UserInfoDelete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CloudUserCenter_UserInfoDelete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UserInfoDeleteRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GreeterServer).UserInfoDelete(ctx, in)
+		return srv.(CloudUserCenterServer).UserInfoDelete(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/cloud_user_center.Greeter/UserInfoDelete",
+		FullMethod: "/cloud_user_center.CloudUserCenter/UserInfoDelete",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GreeterServer).UserInfoDelete(ctx, req.(*UserInfoDeleteRequest))
+		return srv.(CloudUserCenterServer).UserInfoDelete(ctx, req.(*UserInfoDeleteRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Greeter_UserInfoGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CloudUserCenter_UserInfoGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UserInfoGetRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GreeterServer).UserInfoGet(ctx, in)
+		return srv.(CloudUserCenterServer).UserInfoGet(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/cloud_user_center.Greeter/UserInfoGet",
+		FullMethod: "/cloud_user_center.CloudUserCenter/UserInfoGet",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GreeterServer).UserInfoGet(ctx, req.(*UserInfoGetRequest))
+		return srv.(CloudUserCenterServer).UserInfoGet(ctx, req.(*UserInfoGetRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Greeter_MUserInfoGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CloudUserCenter_MUserInfoGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MUserInfoGetRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GreeterServer).MUserInfoGet(ctx, in)
+		return srv.(CloudUserCenterServer).MUserInfoGet(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/cloud_user_center.Greeter/MUserInfoGet",
+		FullMethod: "/cloud_user_center.CloudUserCenter/MUserInfoGet",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GreeterServer).MUserInfoGet(ctx, req.(*MUserInfoGetRequest))
+		return srv.(CloudUserCenterServer).MUserInfoGet(ctx, req.(*MUserInfoGetRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Greeter_UserInfoSearch_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CloudUserCenter_UserInfoSearch_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UserInfoSearchRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GreeterServer).UserInfoSearch(ctx, in)
+		return srv.(CloudUserCenterServer).UserInfoSearch(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/cloud_user_center.Greeter/UserInfoSearch",
+		FullMethod: "/cloud_user_center.CloudUserCenter/UserInfoSearch",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GreeterServer).UserInfoSearch(ctx, req.(*UserInfoSearchRequest))
+		return srv.(CloudUserCenterServer).UserInfoSearch(ctx, req.(*UserInfoSearchRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Greeter_UserMessageCreate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CloudUserCenter_UserMessageCreate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UserMessageCreateRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GreeterServer).UserMessageCreate(ctx, in)
+		return srv.(CloudUserCenterServer).UserMessageCreate(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/cloud_user_center.Greeter/UserMessageCreate",
+		FullMethod: "/cloud_user_center.CloudUserCenter/UserMessageCreate",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GreeterServer).UserMessageCreate(ctx, req.(*UserMessageCreateRequest))
+		return srv.(CloudUserCenterServer).UserMessageCreate(ctx, req.(*UserMessageCreateRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Greeter_MUserMessageCreate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CloudUserCenter_MUserMessageCreate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MUserMessageCreateRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GreeterServer).MUserMessageCreate(ctx, in)
+		return srv.(CloudUserCenterServer).MUserMessageCreate(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/cloud_user_center.Greeter/MUserMessageCreate",
+		FullMethod: "/cloud_user_center.CloudUserCenter/MUserMessageCreate",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GreeterServer).MUserMessageCreate(ctx, req.(*MUserMessageCreateRequest))
+		return srv.(CloudUserCenterServer).MUserMessageCreate(ctx, req.(*MUserMessageCreateRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Greeter_UserMessageGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CloudUserCenter_UserMessageGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UserMessageGetRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GreeterServer).UserMessageGet(ctx, in)
+		return srv.(CloudUserCenterServer).UserMessageGet(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/cloud_user_center.Greeter/UserMessageGet",
+		FullMethod: "/cloud_user_center.CloudUserCenter/UserMessageGet",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GreeterServer).UserMessageGet(ctx, req.(*UserMessageGetRequest))
+		return srv.(CloudUserCenterServer).UserMessageGet(ctx, req.(*UserMessageGetRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Greeter_UserMessageUpdate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CloudUserCenter_UserMessageUpdate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UserMessageUpdateRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GreeterServer).UserMessageUpdate(ctx, in)
+		return srv.(CloudUserCenterServer).UserMessageUpdate(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/cloud_user_center.Greeter/UserMessageUpdate",
+		FullMethod: "/cloud_user_center.CloudUserCenter/UserMessageUpdate",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GreeterServer).UserMessageUpdate(ctx, req.(*UserMessageUpdateRequest))
+		return srv.(CloudUserCenterServer).UserMessageUpdate(ctx, req.(*UserMessageUpdateRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Greeter_UserMessageDelete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CloudUserCenter_UserMessageDelete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UserMessageDeleteRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GreeterServer).UserMessageDelete(ctx, in)
+		return srv.(CloudUserCenterServer).UserMessageDelete(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/cloud_user_center.Greeter/UserMessageDelete",
+		FullMethod: "/cloud_user_center.CloudUserCenter/UserMessageDelete",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GreeterServer).UserMessageDelete(ctx, req.(*UserMessageDeleteRequest))
+		return srv.(CloudUserCenterServer).UserMessageDelete(ctx, req.(*UserMessageDeleteRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// Greeter_ServiceDesc is the grpc.ServiceDesc for Greeter service.
+// CloudUserCenter_ServiceDesc is the grpc.ServiceDesc for CloudUserCenter service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var Greeter_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "cloud_user_center.Greeter",
-	HandlerType: (*GreeterServer)(nil),
+var CloudUserCenter_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "cloud_user_center.CloudUserCenter",
+	HandlerType: (*CloudUserCenterServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "SayHello",
-			Handler:    _Greeter_SayHello_Handler,
+			Handler:    _CloudUserCenter_SayHello_Handler,
 		},
 		{
 			MethodName: "UserInfoCreate",
-			Handler:    _Greeter_UserInfoCreate_Handler,
+			Handler:    _CloudUserCenter_UserInfoCreate_Handler,
 		},
 		{
 			MethodName: "UserInfoAuth",
-			Handler:    _Greeter_UserInfoAuth_Handler,
+			Handler:    _CloudUserCenter_UserInfoAuth_Handler,
 		},
 		{
 			MethodName: "UserInfoUpdate",
-			Handler:    _Greeter_UserInfoUpdate_Handler,
+			Handler:    _CloudUserCenter_UserInfoUpdate_Handler,
 		},
 		{
 			MethodName: "UserInfoDelete",
-			Handler:    _Greeter_UserInfoDelete_Handler,
+			Handler:    _CloudUserCenter_UserInfoDelete_Handler,
 		},
 		{
 			MethodName: "UserInfoGet",
-			Handler:    _Greeter_UserInfoGet_Handler,
+			Handler:    _CloudUserCenter_UserInfoGet_Handler,
 		},
 		{
 			MethodName: "MUserInfoGet",
-			Handler:    _Greeter_MUserInfoGet_Handler,
+			Handler:    _CloudUserCenter_MUserInfoGet_Handler,
 		},
 		{
 			MethodName: "UserInfoSearch",
-			Handler:    _Greeter_UserInfoSearch_Handler,
+			Handler:    _CloudUserCenter_UserInfoSearch_Handler,
 		},
 		{
 			MethodName: "UserMessageCreate",
-			Handler:    _Greeter_UserMessageCreate_Handler,
+			Handler:    _CloudUserCenter_UserMessageCreate_Handler,
 		},
 		{
 			MethodName: "MUserMessageCreate",
-			Handler:    _Greeter_MUserMessageCreate_Handler,
+			Handler:    _CloudUserCenter_MUserMessageCreate_Handler,
 		},
 		{
 			MethodName: "UserMessageGet",
-			Handler:    _Greeter_UserMessageGet_Handler,
+			Handler:    _CloudUserCenter_UserMessageGet_Handler,
 		},
 		{
 			MethodName: "UserMessageUpdate",
-			Handler:    _Greeter_UserMessageUpdate_Handler,
+			Handler:    _CloudUserCenter_UserMessageUpdate_Handler,
 		},
 		{
 			MethodName: "UserMessageDelete",
-			Handler:    _Greeter_UserMessageDelete_Handler,
+			Handler:    _CloudUserCenter_UserMessageDelete_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
