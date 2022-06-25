@@ -22,8 +22,6 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type CloudUserCenterClient interface {
-	// Sends a greeting
-	SayHello(ctx context.Context, in *HelloRequest, opts ...grpc.CallOption) (*HelloReply, error)
 	// 创建用户
 	UserInfoCreate(ctx context.Context, in *UserInfoCreateRequest, opts ...grpc.CallOption) (*UserInfoCreateResponse, error)
 	// 登录校验
@@ -42,6 +40,8 @@ type CloudUserCenterClient interface {
 	UserMessageCreate(ctx context.Context, in *UserMessageCreateRequest, opts ...grpc.CallOption) (*UserMessageCreateResponse, error)
 	// 批量创建用户消息
 	MUserMessageCreate(ctx context.Context, in *MUserMessageCreateRequest, opts ...grpc.CallOption) (*MUserMessageCreateResponse, error)
+	// 用户消息列表
+	UserMessageList(ctx context.Context, in *UserMessageListRequest, opts ...grpc.CallOption) (*UserMessageListResponse, error)
 	// 用户消息获取
 	UserMessageGet(ctx context.Context, in *UserMessageGetRequest, opts ...grpc.CallOption) (*UserMessageGetResponse, error)
 	// 用户消息更新
@@ -56,15 +56,6 @@ type cloudUserCenterClient struct {
 
 func NewCloudUserCenterClient(cc grpc.ClientConnInterface) CloudUserCenterClient {
 	return &cloudUserCenterClient{cc}
-}
-
-func (c *cloudUserCenterClient) SayHello(ctx context.Context, in *HelloRequest, opts ...grpc.CallOption) (*HelloReply, error) {
-	out := new(HelloReply)
-	err := c.cc.Invoke(ctx, "/cloud_user_center.CloudUserCenter/SayHello", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
 }
 
 func (c *cloudUserCenterClient) UserInfoCreate(ctx context.Context, in *UserInfoCreateRequest, opts ...grpc.CallOption) (*UserInfoCreateResponse, error) {
@@ -148,6 +139,15 @@ func (c *cloudUserCenterClient) MUserMessageCreate(ctx context.Context, in *MUse
 	return out, nil
 }
 
+func (c *cloudUserCenterClient) UserMessageList(ctx context.Context, in *UserMessageListRequest, opts ...grpc.CallOption) (*UserMessageListResponse, error) {
+	out := new(UserMessageListResponse)
+	err := c.cc.Invoke(ctx, "/cloud_user_center.CloudUserCenter/UserMessageList", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *cloudUserCenterClient) UserMessageGet(ctx context.Context, in *UserMessageGetRequest, opts ...grpc.CallOption) (*UserMessageGetResponse, error) {
 	out := new(UserMessageGetResponse)
 	err := c.cc.Invoke(ctx, "/cloud_user_center.CloudUserCenter/UserMessageGet", in, out, opts...)
@@ -179,8 +179,6 @@ func (c *cloudUserCenterClient) UserMessageDelete(ctx context.Context, in *UserM
 // All implementations must embed UnimplementedCloudUserCenterServer
 // for forward compatibility
 type CloudUserCenterServer interface {
-	// Sends a greeting
-	SayHello(context.Context, *HelloRequest) (*HelloReply, error)
 	// 创建用户
 	UserInfoCreate(context.Context, *UserInfoCreateRequest) (*UserInfoCreateResponse, error)
 	// 登录校验
@@ -199,6 +197,8 @@ type CloudUserCenterServer interface {
 	UserMessageCreate(context.Context, *UserMessageCreateRequest) (*UserMessageCreateResponse, error)
 	// 批量创建用户消息
 	MUserMessageCreate(context.Context, *MUserMessageCreateRequest) (*MUserMessageCreateResponse, error)
+	// 用户消息列表
+	UserMessageList(context.Context, *UserMessageListRequest) (*UserMessageListResponse, error)
 	// 用户消息获取
 	UserMessageGet(context.Context, *UserMessageGetRequest) (*UserMessageGetResponse, error)
 	// 用户消息更新
@@ -212,9 +212,6 @@ type CloudUserCenterServer interface {
 type UnimplementedCloudUserCenterServer struct {
 }
 
-func (UnimplementedCloudUserCenterServer) SayHello(context.Context, *HelloRequest) (*HelloReply, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SayHello not implemented")
-}
 func (UnimplementedCloudUserCenterServer) UserInfoCreate(context.Context, *UserInfoCreateRequest) (*UserInfoCreateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UserInfoCreate not implemented")
 }
@@ -242,6 +239,9 @@ func (UnimplementedCloudUserCenterServer) UserMessageCreate(context.Context, *Us
 func (UnimplementedCloudUserCenterServer) MUserMessageCreate(context.Context, *MUserMessageCreateRequest) (*MUserMessageCreateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MUserMessageCreate not implemented")
 }
+func (UnimplementedCloudUserCenterServer) UserMessageList(context.Context, *UserMessageListRequest) (*UserMessageListResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UserMessageList not implemented")
+}
 func (UnimplementedCloudUserCenterServer) UserMessageGet(context.Context, *UserMessageGetRequest) (*UserMessageGetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UserMessageGet not implemented")
 }
@@ -262,24 +262,6 @@ type UnsafeCloudUserCenterServer interface {
 
 func RegisterCloudUserCenterServer(s grpc.ServiceRegistrar, srv CloudUserCenterServer) {
 	s.RegisterService(&CloudUserCenter_ServiceDesc, srv)
-}
-
-func _CloudUserCenter_SayHello_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(HelloRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(CloudUserCenterServer).SayHello(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/cloud_user_center.CloudUserCenter/SayHello",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CloudUserCenterServer).SayHello(ctx, req.(*HelloRequest))
-	}
-	return interceptor(ctx, in, info, handler)
 }
 
 func _CloudUserCenter_UserInfoCreate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -444,6 +426,24 @@ func _CloudUserCenter_MUserMessageCreate_Handler(srv interface{}, ctx context.Co
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CloudUserCenter_UserMessageList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UserMessageListRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudUserCenterServer).UserMessageList(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud_user_center.CloudUserCenter/UserMessageList",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudUserCenterServer).UserMessageList(ctx, req.(*UserMessageListRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _CloudUserCenter_UserMessageGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UserMessageGetRequest)
 	if err := dec(in); err != nil {
@@ -506,10 +506,6 @@ var CloudUserCenter_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*CloudUserCenterServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "SayHello",
-			Handler:    _CloudUserCenter_SayHello_Handler,
-		},
-		{
 			MethodName: "UserInfoCreate",
 			Handler:    _CloudUserCenter_UserInfoCreate_Handler,
 		},
@@ -544,6 +540,10 @@ var CloudUserCenter_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "MUserMessageCreate",
 			Handler:    _CloudUserCenter_MUserMessageCreate_Handler,
+		},
+		{
+			MethodName: "UserMessageList",
+			Handler:    _CloudUserCenter_UserMessageList_Handler,
 		},
 		{
 			MethodName: "UserMessageGet",
