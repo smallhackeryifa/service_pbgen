@@ -201,8 +201,8 @@ func local_request_CloudUserCenter_UserInfoGet_0(ctx context.Context, marshaler 
 
 }
 
-func request_CloudUserCenter_MUserInfoGet_0(ctx context.Context, marshaler runtime.Marshaler, client CloudUserCenterClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq MUserInfoGetRequest
+func request_CloudUserCenter_UserInfoList_0(ctx context.Context, marshaler runtime.Marshaler, client CloudUserCenterClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq UserInfoListRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -213,13 +213,13 @@ func request_CloudUserCenter_MUserInfoGet_0(ctx context.Context, marshaler runti
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.MUserInfoGet(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.UserInfoList(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_CloudUserCenter_MUserInfoGet_0(ctx context.Context, marshaler runtime.Marshaler, server CloudUserCenterServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq MUserInfoGetRequest
+func local_request_CloudUserCenter_UserInfoList_0(ctx context.Context, marshaler runtime.Marshaler, server CloudUserCenterServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq UserInfoListRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -230,7 +230,7 @@ func local_request_CloudUserCenter_MUserInfoGet_0(ctx context.Context, marshaler
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.MUserInfoGet(ctx, &protoReq)
+	msg, err := server.UserInfoList(ctx, &protoReq)
 	return msg, metadata, err
 
 }
@@ -633,19 +633,19 @@ func RegisterCloudUserCenterHandlerServer(ctx context.Context, mux *runtime.Serv
 
 	})
 
-	mux.Handle("POST", pattern_CloudUserCenter_MUserInfoGet_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudUserCenter_UserInfoList_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
-		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud_user_center.CloudUserCenter/MUserInfoGet", runtime.WithHTTPPathPattern("/user/m_get"))
+		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/cloud_user_center.CloudUserCenter/UserInfoList", runtime.WithHTTPPathPattern("/user/list"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_CloudUserCenter_MUserInfoGet_0(ctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_CloudUserCenter_UserInfoList_0(ctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -653,7 +653,7 @@ func RegisterCloudUserCenterHandlerServer(ctx context.Context, mux *runtime.Serv
 			return
 		}
 
-		forward_CloudUserCenter_MUserInfoGet_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudUserCenter_UserInfoList_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -995,24 +995,24 @@ func RegisterCloudUserCenterHandlerClient(ctx context.Context, mux *runtime.Serv
 
 	})
 
-	mux.Handle("POST", pattern_CloudUserCenter_MUserInfoGet_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_CloudUserCenter_UserInfoList_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
-		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/cloud_user_center.CloudUserCenter/MUserInfoGet", runtime.WithHTTPPathPattern("/user/m_get"))
+		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/cloud_user_center.CloudUserCenter/UserInfoList", runtime.WithHTTPPathPattern("/user/list"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_CloudUserCenter_MUserInfoGet_0(ctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_CloudUserCenter_UserInfoList_0(ctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_CloudUserCenter_MUserInfoGet_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_CloudUserCenter_UserInfoList_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -1198,7 +1198,7 @@ var (
 
 	pattern_CloudUserCenter_UserInfoGet_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"user", "get"}, ""))
 
-	pattern_CloudUserCenter_MUserInfoGet_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"user", "m_get"}, ""))
+	pattern_CloudUserCenter_UserInfoList_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"user", "list"}, ""))
 
 	pattern_CloudUserCenter_UserInfoGetByName_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"user", "get_by_name"}, ""))
 
@@ -1228,7 +1228,7 @@ var (
 
 	forward_CloudUserCenter_UserInfoGet_0 = runtime.ForwardResponseMessage
 
-	forward_CloudUserCenter_MUserInfoGet_0 = runtime.ForwardResponseMessage
+	forward_CloudUserCenter_UserInfoList_0 = runtime.ForwardResponseMessage
 
 	forward_CloudUserCenter_UserInfoGetByName_0 = runtime.ForwardResponseMessage
 
