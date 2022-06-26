@@ -34,6 +34,8 @@ type CloudUserCenterClient interface {
 	UserInfoGet(ctx context.Context, in *UserInfoGetRequest, opts ...grpc.CallOption) (*UserInfoGetResponse, error)
 	// 批量获取用户信息
 	MUserInfoGet(ctx context.Context, in *MUserInfoGetRequest, opts ...grpc.CallOption) (*MUserInfoGetResponse, error)
+	// 根据用户名获取用户信息
+	UserInfoGetByName(ctx context.Context, in *UserInfoGetByNameRequest, opts ...grpc.CallOption) (*UserInfoGetByNameResponse, error)
 	// 搜索用户信息
 	UserInfoSearch(ctx context.Context, in *UserInfoSearchRequest, opts ...grpc.CallOption) (*UserInfoSearchResponse, error)
 	// 创建用户消息
@@ -106,6 +108,15 @@ func (c *cloudUserCenterClient) UserInfoGet(ctx context.Context, in *UserInfoGet
 func (c *cloudUserCenterClient) MUserInfoGet(ctx context.Context, in *MUserInfoGetRequest, opts ...grpc.CallOption) (*MUserInfoGetResponse, error) {
 	out := new(MUserInfoGetResponse)
 	err := c.cc.Invoke(ctx, "/cloud_user_center.CloudUserCenter/MUserInfoGet", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cloudUserCenterClient) UserInfoGetByName(ctx context.Context, in *UserInfoGetByNameRequest, opts ...grpc.CallOption) (*UserInfoGetByNameResponse, error) {
+	out := new(UserInfoGetByNameResponse)
+	err := c.cc.Invoke(ctx, "/cloud_user_center.CloudUserCenter/UserInfoGetByName", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -191,6 +202,8 @@ type CloudUserCenterServer interface {
 	UserInfoGet(context.Context, *UserInfoGetRequest) (*UserInfoGetResponse, error)
 	// 批量获取用户信息
 	MUserInfoGet(context.Context, *MUserInfoGetRequest) (*MUserInfoGetResponse, error)
+	// 根据用户名获取用户信息
+	UserInfoGetByName(context.Context, *UserInfoGetByNameRequest) (*UserInfoGetByNameResponse, error)
 	// 搜索用户信息
 	UserInfoSearch(context.Context, *UserInfoSearchRequest) (*UserInfoSearchResponse, error)
 	// 创建用户消息
@@ -229,6 +242,9 @@ func (UnimplementedCloudUserCenterServer) UserInfoGet(context.Context, *UserInfo
 }
 func (UnimplementedCloudUserCenterServer) MUserInfoGet(context.Context, *MUserInfoGetRequest) (*MUserInfoGetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method MUserInfoGet not implemented")
+}
+func (UnimplementedCloudUserCenterServer) UserInfoGetByName(context.Context, *UserInfoGetByNameRequest) (*UserInfoGetByNameResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UserInfoGetByName not implemented")
 }
 func (UnimplementedCloudUserCenterServer) UserInfoSearch(context.Context, *UserInfoSearchRequest) (*UserInfoSearchResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UserInfoSearch not implemented")
@@ -368,6 +384,24 @@ func _CloudUserCenter_MUserInfoGet_Handler(srv interface{}, ctx context.Context,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CloudUserCenterServer).MUserInfoGet(ctx, req.(*MUserInfoGetRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CloudUserCenter_UserInfoGetByName_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UserInfoGetByNameRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CloudUserCenterServer).UserInfoGetByName(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cloud_user_center.CloudUserCenter/UserInfoGetByName",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CloudUserCenterServer).UserInfoGetByName(ctx, req.(*UserInfoGetByNameRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -528,6 +562,10 @@ var CloudUserCenter_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "MUserInfoGet",
 			Handler:    _CloudUserCenter_MUserInfoGet_Handler,
+		},
+		{
+			MethodName: "UserInfoGetByName",
+			Handler:    _CloudUserCenter_UserInfoGetByName_Handler,
 		},
 		{
 			MethodName: "UserInfoSearch",

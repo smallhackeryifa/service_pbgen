@@ -1425,6 +1425,116 @@ func (x *MUserInfoGetResponse) GetData() *MUserInfoGetResponse_Data {
 	return nil
 }
 
+type UserInfoGetByNameRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	UserName string `protobuf:"bytes,1,opt,name=user_name,json=userName,proto3" json:"user_name,omitempty"` // 用户名
+}
+
+func (x *UserInfoGetByNameRequest) Reset() {
+	*x = UserInfoGetByNameRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_user_center_proto_msgTypes[24]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UserInfoGetByNameRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UserInfoGetByNameRequest) ProtoMessage() {}
+
+func (x *UserInfoGetByNameRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_user_center_proto_msgTypes[24]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UserInfoGetByNameRequest.ProtoReflect.Descriptor instead.
+func (*UserInfoGetByNameRequest) Descriptor() ([]byte, []int) {
+	return file_user_center_proto_rawDescGZIP(), []int{24}
+}
+
+func (x *UserInfoGetByNameRequest) GetUserName() string {
+	if x != nil {
+		return x.UserName
+	}
+	return ""
+}
+
+type UserInfoGetByNameResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	StatusCode int32                           `protobuf:"varint,1,opt,name=status_code,json=statusCode,proto3" json:"status_code,omitempty"`
+	Msg        string                          `protobuf:"bytes,2,opt,name=msg,proto3" json:"msg,omitempty"`
+	Data       *UserInfoGetByNameResponse_Data `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`
+}
+
+func (x *UserInfoGetByNameResponse) Reset() {
+	*x = UserInfoGetByNameResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_user_center_proto_msgTypes[25]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UserInfoGetByNameResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UserInfoGetByNameResponse) ProtoMessage() {}
+
+func (x *UserInfoGetByNameResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_user_center_proto_msgTypes[25]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UserInfoGetByNameResponse.ProtoReflect.Descriptor instead.
+func (*UserInfoGetByNameResponse) Descriptor() ([]byte, []int) {
+	return file_user_center_proto_rawDescGZIP(), []int{25}
+}
+
+func (x *UserInfoGetByNameResponse) GetStatusCode() int32 {
+	if x != nil {
+		return x.StatusCode
+	}
+	return 0
+}
+
+func (x *UserInfoGetByNameResponse) GetMsg() string {
+	if x != nil {
+		return x.Msg
+	}
+	return ""
+}
+
+func (x *UserInfoGetByNameResponse) GetData() *UserInfoGetByNameResponse_Data {
+	if x != nil {
+		return x.Data
+	}
+	return nil
+}
+
 // 用户信息校验，主要用于登录授权
 type UserInfoAuthRequest struct {
 	state         protoimpl.MessageState
@@ -1440,7 +1550,7 @@ type UserInfoAuthRequest struct {
 func (x *UserInfoAuthRequest) Reset() {
 	*x = UserInfoAuthRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_user_center_proto_msgTypes[24]
+		mi := &file_user_center_proto_msgTypes[26]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1453,7 +1563,7 @@ func (x *UserInfoAuthRequest) String() string {
 func (*UserInfoAuthRequest) ProtoMessage() {}
 
 func (x *UserInfoAuthRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_user_center_proto_msgTypes[24]
+	mi := &file_user_center_proto_msgTypes[26]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1466,7 +1576,7 @@ func (x *UserInfoAuthRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UserInfoAuthRequest.ProtoReflect.Descriptor instead.
 func (*UserInfoAuthRequest) Descriptor() ([]byte, []int) {
-	return file_user_center_proto_rawDescGZIP(), []int{24}
+	return file_user_center_proto_rawDescGZIP(), []int{26}
 }
 
 func (x *UserInfoAuthRequest) GetUserName() string {
@@ -1510,7 +1620,7 @@ type UserInfoAuthResponse struct {
 func (x *UserInfoAuthResponse) Reset() {
 	*x = UserInfoAuthResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_user_center_proto_msgTypes[25]
+		mi := &file_user_center_proto_msgTypes[27]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1523,7 +1633,7 @@ func (x *UserInfoAuthResponse) String() string {
 func (*UserInfoAuthResponse) ProtoMessage() {}
 
 func (x *UserInfoAuthResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_user_center_proto_msgTypes[25]
+	mi := &file_user_center_proto_msgTypes[27]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1536,7 +1646,7 @@ func (x *UserInfoAuthResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UserInfoAuthResponse.ProtoReflect.Descriptor instead.
 func (*UserInfoAuthResponse) Descriptor() ([]byte, []int) {
-	return file_user_center_proto_rawDescGZIP(), []int{25}
+	return file_user_center_proto_rawDescGZIP(), []int{27}
 }
 
 func (x *UserInfoAuthResponse) GetStatusCode() int32 {
@@ -1571,7 +1681,7 @@ type MUserMessageCreateResponse_Data struct {
 func (x *MUserMessageCreateResponse_Data) Reset() {
 	*x = MUserMessageCreateResponse_Data{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_user_center_proto_msgTypes[26]
+		mi := &file_user_center_proto_msgTypes[28]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1584,7 +1694,7 @@ func (x *MUserMessageCreateResponse_Data) String() string {
 func (*MUserMessageCreateResponse_Data) ProtoMessage() {}
 
 func (x *MUserMessageCreateResponse_Data) ProtoReflect() protoreflect.Message {
-	mi := &file_user_center_proto_msgTypes[26]
+	mi := &file_user_center_proto_msgTypes[28]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1618,7 +1728,7 @@ type UserMessageCreateResponse_Data struct {
 func (x *UserMessageCreateResponse_Data) Reset() {
 	*x = UserMessageCreateResponse_Data{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_user_center_proto_msgTypes[27]
+		mi := &file_user_center_proto_msgTypes[29]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1631,7 +1741,7 @@ func (x *UserMessageCreateResponse_Data) String() string {
 func (*UserMessageCreateResponse_Data) ProtoMessage() {}
 
 func (x *UserMessageCreateResponse_Data) ProtoReflect() protoreflect.Message {
-	mi := &file_user_center_proto_msgTypes[27]
+	mi := &file_user_center_proto_msgTypes[29]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1665,7 +1775,7 @@ type UserMessageGetResponse_Data struct {
 func (x *UserMessageGetResponse_Data) Reset() {
 	*x = UserMessageGetResponse_Data{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_user_center_proto_msgTypes[28]
+		mi := &file_user_center_proto_msgTypes[30]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1678,7 +1788,7 @@ func (x *UserMessageGetResponse_Data) String() string {
 func (*UserMessageGetResponse_Data) ProtoMessage() {}
 
 func (x *UserMessageGetResponse_Data) ProtoReflect() protoreflect.Message {
-	mi := &file_user_center_proto_msgTypes[28]
+	mi := &file_user_center_proto_msgTypes[30]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1714,7 +1824,7 @@ type UserMessageListResponse_Data struct {
 func (x *UserMessageListResponse_Data) Reset() {
 	*x = UserMessageListResponse_Data{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_user_center_proto_msgTypes[29]
+		mi := &file_user_center_proto_msgTypes[31]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1727,7 +1837,7 @@ func (x *UserMessageListResponse_Data) String() string {
 func (*UserMessageListResponse_Data) ProtoMessage() {}
 
 func (x *UserMessageListResponse_Data) ProtoReflect() protoreflect.Message {
-	mi := &file_user_center_proto_msgTypes[29]
+	mi := &file_user_center_proto_msgTypes[31]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1773,7 +1883,7 @@ type UserMessageUpdateResponse_Data struct {
 func (x *UserMessageUpdateResponse_Data) Reset() {
 	*x = UserMessageUpdateResponse_Data{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_user_center_proto_msgTypes[30]
+		mi := &file_user_center_proto_msgTypes[32]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1786,7 +1896,7 @@ func (x *UserMessageUpdateResponse_Data) String() string {
 func (*UserMessageUpdateResponse_Data) ProtoMessage() {}
 
 func (x *UserMessageUpdateResponse_Data) ProtoReflect() protoreflect.Message {
-	mi := &file_user_center_proto_msgTypes[30]
+	mi := &file_user_center_proto_msgTypes[32]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1811,7 +1921,7 @@ type UserMessageDeleteResponse_Data struct {
 func (x *UserMessageDeleteResponse_Data) Reset() {
 	*x = UserMessageDeleteResponse_Data{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_user_center_proto_msgTypes[31]
+		mi := &file_user_center_proto_msgTypes[33]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1824,7 +1934,7 @@ func (x *UserMessageDeleteResponse_Data) String() string {
 func (*UserMessageDeleteResponse_Data) ProtoMessage() {}
 
 func (x *UserMessageDeleteResponse_Data) ProtoReflect() protoreflect.Message {
-	mi := &file_user_center_proto_msgTypes[31]
+	mi := &file_user_center_proto_msgTypes[33]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1851,7 +1961,7 @@ type UserInfoCreateResponse_Data struct {
 func (x *UserInfoCreateResponse_Data) Reset() {
 	*x = UserInfoCreateResponse_Data{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_user_center_proto_msgTypes[32]
+		mi := &file_user_center_proto_msgTypes[34]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1864,7 +1974,7 @@ func (x *UserInfoCreateResponse_Data) String() string {
 func (*UserInfoCreateResponse_Data) ProtoMessage() {}
 
 func (x *UserInfoCreateResponse_Data) ProtoReflect() protoreflect.Message {
-	mi := &file_user_center_proto_msgTypes[32]
+	mi := &file_user_center_proto_msgTypes[34]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1896,7 +2006,7 @@ type UserInfoUpdateResponse_Data struct {
 func (x *UserInfoUpdateResponse_Data) Reset() {
 	*x = UserInfoUpdateResponse_Data{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_user_center_proto_msgTypes[33]
+		mi := &file_user_center_proto_msgTypes[35]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1909,7 +2019,7 @@ func (x *UserInfoUpdateResponse_Data) String() string {
 func (*UserInfoUpdateResponse_Data) ProtoMessage() {}
 
 func (x *UserInfoUpdateResponse_Data) ProtoReflect() protoreflect.Message {
-	mi := &file_user_center_proto_msgTypes[33]
+	mi := &file_user_center_proto_msgTypes[35]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1934,7 +2044,7 @@ type UserInfoDeleteResponse_Data struct {
 func (x *UserInfoDeleteResponse_Data) Reset() {
 	*x = UserInfoDeleteResponse_Data{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_user_center_proto_msgTypes[34]
+		mi := &file_user_center_proto_msgTypes[36]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1947,7 +2057,7 @@ func (x *UserInfoDeleteResponse_Data) String() string {
 func (*UserInfoDeleteResponse_Data) ProtoMessage() {}
 
 func (x *UserInfoDeleteResponse_Data) ProtoReflect() protoreflect.Message {
-	mi := &file_user_center_proto_msgTypes[34]
+	mi := &file_user_center_proto_msgTypes[36]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1975,7 +2085,7 @@ type UserInfoSearchResponse_Data struct {
 func (x *UserInfoSearchResponse_Data) Reset() {
 	*x = UserInfoSearchResponse_Data{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_user_center_proto_msgTypes[35]
+		mi := &file_user_center_proto_msgTypes[37]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1988,7 +2098,7 @@ func (x *UserInfoSearchResponse_Data) String() string {
 func (*UserInfoSearchResponse_Data) ProtoMessage() {}
 
 func (x *UserInfoSearchResponse_Data) ProtoReflect() protoreflect.Message {
-	mi := &file_user_center_proto_msgTypes[35]
+	mi := &file_user_center_proto_msgTypes[37]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2029,7 +2139,7 @@ type UserInfoGetResponse_Data struct {
 func (x *UserInfoGetResponse_Data) Reset() {
 	*x = UserInfoGetResponse_Data{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_user_center_proto_msgTypes[36]
+		mi := &file_user_center_proto_msgTypes[38]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2042,7 +2152,7 @@ func (x *UserInfoGetResponse_Data) String() string {
 func (*UserInfoGetResponse_Data) ProtoMessage() {}
 
 func (x *UserInfoGetResponse_Data) ProtoReflect() protoreflect.Message {
-	mi := &file_user_center_proto_msgTypes[36]
+	mi := &file_user_center_proto_msgTypes[38]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2076,7 +2186,7 @@ type MUserInfoGetResponse_Data struct {
 func (x *MUserInfoGetResponse_Data) Reset() {
 	*x = MUserInfoGetResponse_Data{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_user_center_proto_msgTypes[37]
+		mi := &file_user_center_proto_msgTypes[39]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2089,7 +2199,7 @@ func (x *MUserInfoGetResponse_Data) String() string {
 func (*MUserInfoGetResponse_Data) ProtoMessage() {}
 
 func (x *MUserInfoGetResponse_Data) ProtoReflect() protoreflect.Message {
-	mi := &file_user_center_proto_msgTypes[37]
+	mi := &file_user_center_proto_msgTypes[39]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2112,6 +2222,53 @@ func (x *MUserInfoGetResponse_Data) GetUserInfos() []*BaseUserInfo {
 	return nil
 }
 
+type UserInfoGetByNameResponse_Data struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	UserInfo *BaseUserInfo `protobuf:"bytes,1,opt,name=user_info,json=userInfo,proto3" json:"user_info,omitempty"` //用户信息
+}
+
+func (x *UserInfoGetByNameResponse_Data) Reset() {
+	*x = UserInfoGetByNameResponse_Data{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_user_center_proto_msgTypes[40]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UserInfoGetByNameResponse_Data) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UserInfoGetByNameResponse_Data) ProtoMessage() {}
+
+func (x *UserInfoGetByNameResponse_Data) ProtoReflect() protoreflect.Message {
+	mi := &file_user_center_proto_msgTypes[40]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UserInfoGetByNameResponse_Data.ProtoReflect.Descriptor instead.
+func (*UserInfoGetByNameResponse_Data) Descriptor() ([]byte, []int) {
+	return file_user_center_proto_rawDescGZIP(), []int{25, 0}
+}
+
+func (x *UserInfoGetByNameResponse_Data) GetUserInfo() *BaseUserInfo {
+	if x != nil {
+		return x.UserInfo
+	}
+	return nil
+}
+
 type UserInfoAuthResponse_Data struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2123,7 +2280,7 @@ type UserInfoAuthResponse_Data struct {
 func (x *UserInfoAuthResponse_Data) Reset() {
 	*x = UserInfoAuthResponse_Data{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_user_center_proto_msgTypes[38]
+		mi := &file_user_center_proto_msgTypes[41]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2136,7 +2293,7 @@ func (x *UserInfoAuthResponse_Data) String() string {
 func (*UserInfoAuthResponse_Data) ProtoMessage() {}
 
 func (x *UserInfoAuthResponse_Data) ProtoReflect() protoreflect.Message {
-	mi := &file_user_center_proto_msgTypes[38]
+	mi := &file_user_center_proto_msgTypes[41]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2149,7 +2306,7 @@ func (x *UserInfoAuthResponse_Data) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UserInfoAuthResponse_Data.ProtoReflect.Descriptor instead.
 func (*UserInfoAuthResponse_Data) Descriptor() ([]byte, []int) {
-	return file_user_center_proto_rawDescGZIP(), []int{25, 0}
+	return file_user_center_proto_rawDescGZIP(), []int{27, 0}
 }
 
 func (x *UserInfoAuthResponse_Data) GetUserInfo() *BaseUserInfo {
@@ -2368,30 +2525,47 @@ var file_user_center_proto_rawDesc = []byte{
 	0x04, 0x44, 0x61, 0x74, 0x61, 0x12, 0x2c, 0x0a, 0x0a, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x69, 0x6e,
 	0x66, 0x6f, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x42, 0x61, 0x73, 0x65,
 	0x55, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x09, 0x75, 0x73, 0x65, 0x72, 0x49, 0x6e,
-	0x66, 0x6f, 0x73, 0x22, 0x87, 0x01, 0x0a, 0x13, 0x55, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f,
-	0x41, 0x75, 0x74, 0x68, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1b, 0x0a, 0x09, 0x75,
-	0x73, 0x65, 0x72, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08,
-	0x75, 0x73, 0x65, 0x72, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x65, 0x6d, 0x61, 0x69,
-	0x6c, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x65, 0x6d, 0x61, 0x69, 0x6c, 0x12, 0x21,
-	0x0a, 0x0c, 0x70, 0x68, 0x6f, 0x6e, 0x65, 0x5f, 0x6e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x18, 0x04,
-	0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x70, 0x68, 0x6f, 0x6e, 0x65, 0x4e, 0x75, 0x6d, 0x62, 0x65,
-	0x72, 0x12, 0x1a, 0x0a, 0x08, 0x70, 0x61, 0x73, 0x73, 0x77, 0x6f, 0x72, 0x64, 0x18, 0x05, 0x20,
-	0x01, 0x28, 0x09, 0x52, 0x08, 0x70, 0x61, 0x73, 0x73, 0x77, 0x6f, 0x72, 0x64, 0x22, 0xbf, 0x01,
-	0x0a, 0x14, 0x55, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x41, 0x75, 0x74, 0x68, 0x52, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x1f, 0x0a, 0x0b, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73,
-	0x5f, 0x63, 0x6f, 0x64, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x52, 0x0a, 0x73, 0x74, 0x61,
-	0x74, 0x75, 0x73, 0x43, 0x6f, 0x64, 0x65, 0x12, 0x10, 0x0a, 0x03, 0x6d, 0x73, 0x67, 0x18, 0x02,
-	0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6d, 0x73, 0x67, 0x12, 0x40, 0x0a, 0x04, 0x64, 0x61, 0x74,
-	0x61, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2c, 0x2e, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x5f,
-	0x75, 0x73, 0x65, 0x72, 0x5f, 0x63, 0x65, 0x6e, 0x74, 0x65, 0x72, 0x2e, 0x55, 0x73, 0x65, 0x72,
-	0x49, 0x6e, 0x66, 0x6f, 0x41, 0x75, 0x74, 0x68, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
-	0x2e, 0x44, 0x61, 0x74, 0x61, 0x52, 0x04, 0x64, 0x61, 0x74, 0x61, 0x1a, 0x32, 0x0a, 0x04, 0x44,
-	0x61, 0x74, 0x61, 0x12, 0x2a, 0x0a, 0x09, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x69, 0x6e, 0x66, 0x6f,
-	0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x42, 0x61, 0x73, 0x65, 0x55, 0x73, 0x65,
-	0x72, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x08, 0x75, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x42,
-	0x27, 0x5a, 0x25, 0x2e, 0x2e, 0x2f, 0x2e, 0x2e, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
-	0x5f, 0x70, 0x62, 0x67, 0x65, 0x6e, 0x2f, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x5f, 0x75, 0x73, 0x65,
-	0x72, 0x5f, 0x63, 0x65, 0x6e, 0x74, 0x65, 0x72, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x66, 0x6f, 0x73, 0x22, 0x37, 0x0a, 0x18, 0x55, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x47,
+	0x65, 0x74, 0x42, 0x79, 0x4e, 0x61, 0x6d, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12,
+	0x1b, 0x0a, 0x09, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x08, 0x75, 0x73, 0x65, 0x72, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0xc9, 0x01, 0x0a,
+	0x19, 0x55, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x47, 0x65, 0x74, 0x42, 0x79, 0x4e, 0x61,
+	0x6d, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x1f, 0x0a, 0x0b, 0x73, 0x74,
+	0x61, 0x74, 0x75, 0x73, 0x5f, 0x63, 0x6f, 0x64, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x52,
+	0x0a, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x43, 0x6f, 0x64, 0x65, 0x12, 0x10, 0x0a, 0x03, 0x6d,
+	0x73, 0x67, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6d, 0x73, 0x67, 0x12, 0x45, 0x0a,
+	0x04, 0x64, 0x61, 0x74, 0x61, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x31, 0x2e, 0x63, 0x6c,
+	0x6f, 0x75, 0x64, 0x5f, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x63, 0x65, 0x6e, 0x74, 0x65, 0x72, 0x2e,
+	0x55, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x47, 0x65, 0x74, 0x42, 0x79, 0x4e, 0x61, 0x6d,
+	0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x2e, 0x44, 0x61, 0x74, 0x61, 0x52, 0x04,
+	0x64, 0x61, 0x74, 0x61, 0x1a, 0x32, 0x0a, 0x04, 0x44, 0x61, 0x74, 0x61, 0x12, 0x2a, 0x0a, 0x09,
+	0x75, 0x73, 0x65, 0x72, 0x5f, 0x69, 0x6e, 0x66, 0x6f, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32,
+	0x0d, 0x2e, 0x42, 0x61, 0x73, 0x65, 0x55, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x08,
+	0x75, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x22, 0x87, 0x01, 0x0a, 0x13, 0x55, 0x73, 0x65,
+	0x72, 0x49, 0x6e, 0x66, 0x6f, 0x41, 0x75, 0x74, 0x68, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x12, 0x1b, 0x0a, 0x09, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x08, 0x75, 0x73, 0x65, 0x72, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x14, 0x0a,
+	0x05, 0x65, 0x6d, 0x61, 0x69, 0x6c, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x65, 0x6d,
+	0x61, 0x69, 0x6c, 0x12, 0x21, 0x0a, 0x0c, 0x70, 0x68, 0x6f, 0x6e, 0x65, 0x5f, 0x6e, 0x75, 0x6d,
+	0x62, 0x65, 0x72, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x70, 0x68, 0x6f, 0x6e, 0x65,
+	0x4e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x12, 0x1a, 0x0a, 0x08, 0x70, 0x61, 0x73, 0x73, 0x77, 0x6f,
+	0x72, 0x64, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x70, 0x61, 0x73, 0x73, 0x77, 0x6f,
+	0x72, 0x64, 0x22, 0xbf, 0x01, 0x0a, 0x14, 0x55, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x41,
+	0x75, 0x74, 0x68, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x1f, 0x0a, 0x0b, 0x73,
+	0x74, 0x61, 0x74, 0x75, 0x73, 0x5f, 0x63, 0x6f, 0x64, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05,
+	0x52, 0x0a, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x43, 0x6f, 0x64, 0x65, 0x12, 0x10, 0x0a, 0x03,
+	0x6d, 0x73, 0x67, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6d, 0x73, 0x67, 0x12, 0x40,
+	0x0a, 0x04, 0x64, 0x61, 0x74, 0x61, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2c, 0x2e, 0x63,
+	0x6c, 0x6f, 0x75, 0x64, 0x5f, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x63, 0x65, 0x6e, 0x74, 0x65, 0x72,
+	0x2e, 0x55, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x41, 0x75, 0x74, 0x68, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x2e, 0x44, 0x61, 0x74, 0x61, 0x52, 0x04, 0x64, 0x61, 0x74, 0x61,
+	0x1a, 0x32, 0x0a, 0x04, 0x44, 0x61, 0x74, 0x61, 0x12, 0x2a, 0x0a, 0x09, 0x75, 0x73, 0x65, 0x72,
+	0x5f, 0x69, 0x6e, 0x66, 0x6f, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x42, 0x61,
+	0x73, 0x65, 0x55, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x08, 0x75, 0x73, 0x65, 0x72,
+	0x49, 0x6e, 0x66, 0x6f, 0x42, 0x27, 0x5a, 0x25, 0x2e, 0x2e, 0x2f, 0x2e, 0x2e, 0x2f, 0x73, 0x65,
+	0x72, 0x76, 0x69, 0x63, 0x65, 0x5f, 0x70, 0x62, 0x67, 0x65, 0x6e, 0x2f, 0x63, 0x6c, 0x6f, 0x75,
+	0x64, 0x5f, 0x75, 0x73, 0x65, 0x72, 0x5f, 0x63, 0x65, 0x6e, 0x74, 0x65, 0x72, 0x62, 0x06, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -2406,7 +2580,7 @@ func file_user_center_proto_rawDescGZIP() []byte {
 	return file_user_center_proto_rawDescData
 }
 
-var file_user_center_proto_msgTypes = make([]protoimpl.MessageInfo, 39)
+var file_user_center_proto_msgTypes = make([]protoimpl.MessageInfo, 42)
 var file_user_center_proto_goTypes = []interface{}{
 	(*MUserMessageCreateRequest)(nil),       // 0: cloud_user_center.MUserMessageCreateRequest
 	(*MUserMessageCreateResponse)(nil),      // 1: cloud_user_center.MUserMessageCreateResponse
@@ -2432,55 +2606,60 @@ var file_user_center_proto_goTypes = []interface{}{
 	(*UserInfoGetResponse)(nil),             // 21: cloud_user_center.UserInfoGetResponse
 	(*MUserInfoGetRequest)(nil),             // 22: cloud_user_center.MUserInfoGetRequest
 	(*MUserInfoGetResponse)(nil),            // 23: cloud_user_center.MUserInfoGetResponse
-	(*UserInfoAuthRequest)(nil),             // 24: cloud_user_center.UserInfoAuthRequest
-	(*UserInfoAuthResponse)(nil),            // 25: cloud_user_center.UserInfoAuthResponse
-	(*MUserMessageCreateResponse_Data)(nil), // 26: cloud_user_center.MUserMessageCreateResponse.Data
-	(*UserMessageCreateResponse_Data)(nil),  // 27: cloud_user_center.UserMessageCreateResponse.Data
-	(*UserMessageGetResponse_Data)(nil),     // 28: cloud_user_center.UserMessageGetResponse.Data
-	(*UserMessageListResponse_Data)(nil),    // 29: cloud_user_center.UserMessageListResponse.Data
-	(*UserMessageUpdateResponse_Data)(nil),  // 30: cloud_user_center.UserMessageUpdateResponse.Data
-	(*UserMessageDeleteResponse_Data)(nil),  // 31: cloud_user_center.UserMessageDeleteResponse.Data
-	(*UserInfoCreateResponse_Data)(nil),     // 32: cloud_user_center.UserInfoCreateResponse.Data
-	(*UserInfoUpdateResponse_Data)(nil),     // 33: cloud_user_center.UserInfoUpdateResponse.Data
-	(*UserInfoDeleteResponse_Data)(nil),     // 34: cloud_user_center.UserInfoDeleteResponse.Data
-	(*UserInfoSearchResponse_Data)(nil),     // 35: cloud_user_center.UserInfoSearchResponse.Data
-	(*UserInfoGetResponse_Data)(nil),        // 36: cloud_user_center.UserInfoGetResponse.Data
-	(*MUserInfoGetResponse_Data)(nil),       // 37: cloud_user_center.MUserInfoGetResponse.Data
-	(*UserInfoAuthResponse_Data)(nil),       // 38: cloud_user_center.UserInfoAuthResponse.Data
-	(*Message)(nil),                         // 39: Message
-	(*CreateUserInfo)(nil),                  // 40: CreateUserInfo
-	(*UpdateUserInfo)(nil),                  // 41: UpdateUserInfo
-	(*BaseUserInfo)(nil),                    // 42: BaseUserInfo
+	(*UserInfoGetByNameRequest)(nil),        // 24: cloud_user_center.UserInfoGetByNameRequest
+	(*UserInfoGetByNameResponse)(nil),       // 25: cloud_user_center.UserInfoGetByNameResponse
+	(*UserInfoAuthRequest)(nil),             // 26: cloud_user_center.UserInfoAuthRequest
+	(*UserInfoAuthResponse)(nil),            // 27: cloud_user_center.UserInfoAuthResponse
+	(*MUserMessageCreateResponse_Data)(nil), // 28: cloud_user_center.MUserMessageCreateResponse.Data
+	(*UserMessageCreateResponse_Data)(nil),  // 29: cloud_user_center.UserMessageCreateResponse.Data
+	(*UserMessageGetResponse_Data)(nil),     // 30: cloud_user_center.UserMessageGetResponse.Data
+	(*UserMessageListResponse_Data)(nil),    // 31: cloud_user_center.UserMessageListResponse.Data
+	(*UserMessageUpdateResponse_Data)(nil),  // 32: cloud_user_center.UserMessageUpdateResponse.Data
+	(*UserMessageDeleteResponse_Data)(nil),  // 33: cloud_user_center.UserMessageDeleteResponse.Data
+	(*UserInfoCreateResponse_Data)(nil),     // 34: cloud_user_center.UserInfoCreateResponse.Data
+	(*UserInfoUpdateResponse_Data)(nil),     // 35: cloud_user_center.UserInfoUpdateResponse.Data
+	(*UserInfoDeleteResponse_Data)(nil),     // 36: cloud_user_center.UserInfoDeleteResponse.Data
+	(*UserInfoSearchResponse_Data)(nil),     // 37: cloud_user_center.UserInfoSearchResponse.Data
+	(*UserInfoGetResponse_Data)(nil),        // 38: cloud_user_center.UserInfoGetResponse.Data
+	(*MUserInfoGetResponse_Data)(nil),       // 39: cloud_user_center.MUserInfoGetResponse.Data
+	(*UserInfoGetByNameResponse_Data)(nil),  // 40: cloud_user_center.UserInfoGetByNameResponse.Data
+	(*UserInfoAuthResponse_Data)(nil),       // 41: cloud_user_center.UserInfoAuthResponse.Data
+	(*Message)(nil),                         // 42: Message
+	(*CreateUserInfo)(nil),                  // 43: CreateUserInfo
+	(*UpdateUserInfo)(nil),                  // 44: UpdateUserInfo
+	(*BaseUserInfo)(nil),                    // 45: BaseUserInfo
 }
 var file_user_center_proto_depIdxs = []int32{
-	39, // 0: cloud_user_center.MUserMessageCreateRequest.user_messages:type_name -> Message
-	26, // 1: cloud_user_center.MUserMessageCreateResponse.data:type_name -> cloud_user_center.MUserMessageCreateResponse.Data
-	39, // 2: cloud_user_center.UserMessageCreateRequest.user_message:type_name -> Message
-	27, // 3: cloud_user_center.UserMessageCreateResponse.data:type_name -> cloud_user_center.UserMessageCreateResponse.Data
-	28, // 4: cloud_user_center.UserMessageGetResponse.data:type_name -> cloud_user_center.UserMessageGetResponse.Data
-	29, // 5: cloud_user_center.UserMessageListResponse.data:type_name -> cloud_user_center.UserMessageListResponse.Data
-	30, // 6: cloud_user_center.UserMessageUpdateResponse.data:type_name -> cloud_user_center.UserMessageUpdateResponse.Data
-	31, // 7: cloud_user_center.UserMessageDeleteResponse.data:type_name -> cloud_user_center.UserMessageDeleteResponse.Data
-	40, // 8: cloud_user_center.UserInfoCreateRequest.create_user_info:type_name -> CreateUserInfo
-	32, // 9: cloud_user_center.UserInfoCreateResponse.data:type_name -> cloud_user_center.UserInfoCreateResponse.Data
-	41, // 10: cloud_user_center.UserInfoUpdateRequest.update_user_info:type_name -> UpdateUserInfo
-	33, // 11: cloud_user_center.UserInfoUpdateResponse.data:type_name -> cloud_user_center.UserInfoUpdateResponse.Data
-	34, // 12: cloud_user_center.UserInfoDeleteResponse.data:type_name -> cloud_user_center.UserInfoDeleteResponse.Data
-	35, // 13: cloud_user_center.UserInfoSearchResponse.data:type_name -> cloud_user_center.UserInfoSearchResponse.Data
-	36, // 14: cloud_user_center.UserInfoGetResponse.data:type_name -> cloud_user_center.UserInfoGetResponse.Data
-	37, // 15: cloud_user_center.MUserInfoGetResponse.data:type_name -> cloud_user_center.MUserInfoGetResponse.Data
-	38, // 16: cloud_user_center.UserInfoAuthResponse.data:type_name -> cloud_user_center.UserInfoAuthResponse.Data
-	39, // 17: cloud_user_center.UserMessageGetResponse.Data.message:type_name -> Message
-	39, // 18: cloud_user_center.UserMessageListResponse.Data.user_messages:type_name -> Message
-	42, // 19: cloud_user_center.UserInfoSearchResponse.Data.user_infos:type_name -> BaseUserInfo
-	42, // 20: cloud_user_center.UserInfoGetResponse.Data.user_info:type_name -> BaseUserInfo
-	42, // 21: cloud_user_center.MUserInfoGetResponse.Data.user_infos:type_name -> BaseUserInfo
-	42, // 22: cloud_user_center.UserInfoAuthResponse.Data.user_info:type_name -> BaseUserInfo
-	23, // [23:23] is the sub-list for method output_type
-	23, // [23:23] is the sub-list for method input_type
-	23, // [23:23] is the sub-list for extension type_name
-	23, // [23:23] is the sub-list for extension extendee
-	0,  // [0:23] is the sub-list for field type_name
+	42, // 0: cloud_user_center.MUserMessageCreateRequest.user_messages:type_name -> Message
+	28, // 1: cloud_user_center.MUserMessageCreateResponse.data:type_name -> cloud_user_center.MUserMessageCreateResponse.Data
+	42, // 2: cloud_user_center.UserMessageCreateRequest.user_message:type_name -> Message
+	29, // 3: cloud_user_center.UserMessageCreateResponse.data:type_name -> cloud_user_center.UserMessageCreateResponse.Data
+	30, // 4: cloud_user_center.UserMessageGetResponse.data:type_name -> cloud_user_center.UserMessageGetResponse.Data
+	31, // 5: cloud_user_center.UserMessageListResponse.data:type_name -> cloud_user_center.UserMessageListResponse.Data
+	32, // 6: cloud_user_center.UserMessageUpdateResponse.data:type_name -> cloud_user_center.UserMessageUpdateResponse.Data
+	33, // 7: cloud_user_center.UserMessageDeleteResponse.data:type_name -> cloud_user_center.UserMessageDeleteResponse.Data
+	43, // 8: cloud_user_center.UserInfoCreateRequest.create_user_info:type_name -> CreateUserInfo
+	34, // 9: cloud_user_center.UserInfoCreateResponse.data:type_name -> cloud_user_center.UserInfoCreateResponse.Data
+	44, // 10: cloud_user_center.UserInfoUpdateRequest.update_user_info:type_name -> UpdateUserInfo
+	35, // 11: cloud_user_center.UserInfoUpdateResponse.data:type_name -> cloud_user_center.UserInfoUpdateResponse.Data
+	36, // 12: cloud_user_center.UserInfoDeleteResponse.data:type_name -> cloud_user_center.UserInfoDeleteResponse.Data
+	37, // 13: cloud_user_center.UserInfoSearchResponse.data:type_name -> cloud_user_center.UserInfoSearchResponse.Data
+	38, // 14: cloud_user_center.UserInfoGetResponse.data:type_name -> cloud_user_center.UserInfoGetResponse.Data
+	39, // 15: cloud_user_center.MUserInfoGetResponse.data:type_name -> cloud_user_center.MUserInfoGetResponse.Data
+	40, // 16: cloud_user_center.UserInfoGetByNameResponse.data:type_name -> cloud_user_center.UserInfoGetByNameResponse.Data
+	41, // 17: cloud_user_center.UserInfoAuthResponse.data:type_name -> cloud_user_center.UserInfoAuthResponse.Data
+	42, // 18: cloud_user_center.UserMessageGetResponse.Data.message:type_name -> Message
+	42, // 19: cloud_user_center.UserMessageListResponse.Data.user_messages:type_name -> Message
+	45, // 20: cloud_user_center.UserInfoSearchResponse.Data.user_infos:type_name -> BaseUserInfo
+	45, // 21: cloud_user_center.UserInfoGetResponse.Data.user_info:type_name -> BaseUserInfo
+	45, // 22: cloud_user_center.MUserInfoGetResponse.Data.user_infos:type_name -> BaseUserInfo
+	45, // 23: cloud_user_center.UserInfoGetByNameResponse.Data.user_info:type_name -> BaseUserInfo
+	45, // 24: cloud_user_center.UserInfoAuthResponse.Data.user_info:type_name -> BaseUserInfo
+	25, // [25:25] is the sub-list for method output_type
+	25, // [25:25] is the sub-list for method input_type
+	25, // [25:25] is the sub-list for extension type_name
+	25, // [25:25] is the sub-list for extension extendee
+	0,  // [0:25] is the sub-list for field type_name
 }
 
 func init() { file_user_center_proto_init() }
@@ -2779,7 +2958,7 @@ func file_user_center_proto_init() {
 			}
 		}
 		file_user_center_proto_msgTypes[24].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UserInfoAuthRequest); i {
+			switch v := v.(*UserInfoGetByNameRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2791,7 +2970,7 @@ func file_user_center_proto_init() {
 			}
 		}
 		file_user_center_proto_msgTypes[25].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UserInfoAuthResponse); i {
+			switch v := v.(*UserInfoGetByNameResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2803,7 +2982,7 @@ func file_user_center_proto_init() {
 			}
 		}
 		file_user_center_proto_msgTypes[26].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*MUserMessageCreateResponse_Data); i {
+			switch v := v.(*UserInfoAuthRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2815,7 +2994,7 @@ func file_user_center_proto_init() {
 			}
 		}
 		file_user_center_proto_msgTypes[27].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UserMessageCreateResponse_Data); i {
+			switch v := v.(*UserInfoAuthResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2827,7 +3006,7 @@ func file_user_center_proto_init() {
 			}
 		}
 		file_user_center_proto_msgTypes[28].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UserMessageGetResponse_Data); i {
+			switch v := v.(*MUserMessageCreateResponse_Data); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2839,7 +3018,7 @@ func file_user_center_proto_init() {
 			}
 		}
 		file_user_center_proto_msgTypes[29].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UserMessageListResponse_Data); i {
+			switch v := v.(*UserMessageCreateResponse_Data); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2851,7 +3030,7 @@ func file_user_center_proto_init() {
 			}
 		}
 		file_user_center_proto_msgTypes[30].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UserMessageUpdateResponse_Data); i {
+			switch v := v.(*UserMessageGetResponse_Data); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2863,7 +3042,7 @@ func file_user_center_proto_init() {
 			}
 		}
 		file_user_center_proto_msgTypes[31].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UserMessageDeleteResponse_Data); i {
+			switch v := v.(*UserMessageListResponse_Data); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2875,7 +3054,7 @@ func file_user_center_proto_init() {
 			}
 		}
 		file_user_center_proto_msgTypes[32].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UserInfoCreateResponse_Data); i {
+			switch v := v.(*UserMessageUpdateResponse_Data); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2887,7 +3066,7 @@ func file_user_center_proto_init() {
 			}
 		}
 		file_user_center_proto_msgTypes[33].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UserInfoUpdateResponse_Data); i {
+			switch v := v.(*UserMessageDeleteResponse_Data); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2899,7 +3078,7 @@ func file_user_center_proto_init() {
 			}
 		}
 		file_user_center_proto_msgTypes[34].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UserInfoDeleteResponse_Data); i {
+			switch v := v.(*UserInfoCreateResponse_Data); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2911,7 +3090,7 @@ func file_user_center_proto_init() {
 			}
 		}
 		file_user_center_proto_msgTypes[35].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UserInfoSearchResponse_Data); i {
+			switch v := v.(*UserInfoUpdateResponse_Data); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2923,7 +3102,7 @@ func file_user_center_proto_init() {
 			}
 		}
 		file_user_center_proto_msgTypes[36].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UserInfoGetResponse_Data); i {
+			switch v := v.(*UserInfoDeleteResponse_Data); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2935,7 +3114,7 @@ func file_user_center_proto_init() {
 			}
 		}
 		file_user_center_proto_msgTypes[37].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*MUserInfoGetResponse_Data); i {
+			switch v := v.(*UserInfoSearchResponse_Data); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2947,6 +3126,42 @@ func file_user_center_proto_init() {
 			}
 		}
 		file_user_center_proto_msgTypes[38].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UserInfoGetResponse_Data); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_user_center_proto_msgTypes[39].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*MUserInfoGetResponse_Data); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_user_center_proto_msgTypes[40].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UserInfoGetByNameResponse_Data); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_user_center_proto_msgTypes[41].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UserInfoAuthResponse_Data); i {
 			case 0:
 				return &v.state
@@ -2965,7 +3180,7 @@ func file_user_center_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_user_center_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   39,
+			NumMessages:   42,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
