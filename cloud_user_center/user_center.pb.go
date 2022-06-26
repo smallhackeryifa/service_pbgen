@@ -1320,7 +1320,7 @@ type MUserInfoGetRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	UserIds []int64 `protobuf:"varint,1,rep,packed,name=user_ids,json=userIds,proto3" json:"user_ids,omitempty"` //用户列表
+	UserIds []int64 `protobuf:"bytes,1,rep,packed,name=user_ids,json=userIds,proto3" json:"user_ids,omitempty"` //用户列表
 }
 
 func (x *MUserInfoGetRequest) Reset() {
