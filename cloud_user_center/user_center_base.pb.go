@@ -20,22 +20,21 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-// 基础用户结构
 type BaseUserInfo struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	UserId          int64  `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`                           //用户id
-	Name            string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`                                              // 用户名
-	Email           string `protobuf:"bytes,3,opt,name=email,proto3" json:"email,omitempty"`                                            // 邮箱
-	InstitutionName string `protobuf:"bytes,4,opt,name=institution_name,json=institutionName,proto3" json:"institution_name,omitempty"` // 机构名
-	PhoneNumber     string `protobuf:"bytes,5,opt,name=phone_number,json=phoneNumber,proto3" json:"phone_number,omitempty"`             // 联系方式
-	Grade           string `protobuf:"bytes,6,opt,name=grade,proto3" json:"grade,omitempty"`                                            // 职级
-	Area            string `protobuf:"bytes,7,opt,name=area,proto3" json:"area,omitempty"`                                              // 区域
-	VncPort         int32  `protobuf:"varint,8,opt,name=vnc_port,json=vncPort,proto3" json:"vnc_port,omitempty"`                        // vnc登录端口
-	UserHost        string `protobuf:"bytes,9,opt,name=user_host,json=userHost,proto3" json:"user_host,omitempty"`                      // 用户主机
-	PasswordLevel   int32  `protobuf:"varint,10,opt,name=password_level,json=passwordLevel,proto3" json:"password_level,omitempty"`     // 密码等级
+	UserId          int64  `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Name            string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Email           string `protobuf:"bytes,3,opt,name=email,proto3" json:"email,omitempty"`
+	InstitutionName string `protobuf:"bytes,4,opt,name=institution_name,json=institutionName,proto3" json:"institution_name,omitempty"`
+	PhoneNumber     string `protobuf:"bytes,5,opt,name=phone_number,json=phoneNumber,proto3" json:"phone_number,omitempty"`
+	Grade           string `protobuf:"bytes,6,opt,name=grade,proto3" json:"grade,omitempty"`
+	Area            string `protobuf:"bytes,7,opt,name=area,proto3" json:"area,omitempty"`
+	VncPort         int32  `protobuf:"varint,8,opt,name=vnc_port,json=vncPort,proto3" json:"vnc_port,omitempty"`
+	UserHost        string `protobuf:"bytes,9,opt,name=user_host,json=userHost,proto3" json:"user_host,omitempty"`
+	PasswordLevel   int32  `protobuf:"varint,10,opt,name=password_level,json=passwordLevel,proto3" json:"password_level,omitempty"`
 }
 
 func (x *BaseUserInfo) Reset() {
@@ -140,23 +139,22 @@ func (x *BaseUserInfo) GetPasswordLevel() int32 {
 	return 0
 }
 
-// 创建的用户结构
 type CreateUserInfo struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	UserId          int64  `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`                           //用户id
-	Name            string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`                                              // 用户名
-	Email           string `protobuf:"bytes,3,opt,name=email,proto3" json:"email,omitempty"`                                            // 邮箱
-	InstitutionName string `protobuf:"bytes,4,opt,name=institution_name,json=institutionName,proto3" json:"institution_name,omitempty"` // 机构名
-	PhoneNumber     string `protobuf:"bytes,5,opt,name=phone_number,json=phoneNumber,proto3" json:"phone_number,omitempty"`             // 联系方式
-	Grade           string `protobuf:"bytes,6,opt,name=grade,proto3" json:"grade,omitempty"`                                            // 职级
-	Area            string `protobuf:"bytes,7,opt,name=area,proto3" json:"area,omitempty"`                                              // 区域
-	Password        string `protobuf:"bytes,8,opt,name=password,proto3" json:"password,omitempty"`                                      // 密码, 对原始密码md5后的值
-	PasswordLevel   int32  `protobuf:"varint,9,opt,name=password_level,json=passwordLevel,proto3" json:"password_level,omitempty"`      // 密码等级，业务方自定义
-	VncPort         int32  `protobuf:"varint,10,opt,name=vnc_port,json=vncPort,proto3" json:"vnc_port,omitempty"`                       // optional vnc 端口，不传则表示不开通该功能，
-	UserHost        string `protobuf:"bytes,11,opt,name=user_host,json=userHost,proto3" json:"user_host,omitempty"`                     // optional 用户使用主机ip:port, 不传则表示不开通该功能，
+	UserId          int64  `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Name            string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Email           string `protobuf:"bytes,3,opt,name=email,proto3" json:"email,omitempty"`
+	InstitutionName string `protobuf:"bytes,4,opt,name=institution_name,json=institutionName,proto3" json:"institution_name,omitempty"`
+	PhoneNumber     string `protobuf:"bytes,5,opt,name=phone_number,json=phoneNumber,proto3" json:"phone_number,omitempty"`
+	Grade           string `protobuf:"bytes,6,opt,name=grade,proto3" json:"grade,omitempty"`
+	Area            string `protobuf:"bytes,7,opt,name=area,proto3" json:"area,omitempty"`
+	Password        string `protobuf:"bytes,8,opt,name=password,proto3" json:"password,omitempty"`
+	PasswordLevel   int32  `protobuf:"varint,9,opt,name=password_level,json=passwordLevel,proto3" json:"password_level,omitempty"`
+	VncPort         int32  `protobuf:"varint,10,opt,name=vnc_port,json=vncPort,proto3" json:"vnc_port,omitempty"`
+	UserHost        string `protobuf:"bytes,11,opt,name=user_host,json=userHost,proto3" json:"user_host,omitempty"`
 }
 
 func (x *CreateUserInfo) Reset() {
@@ -268,19 +266,18 @@ func (x *CreateUserInfo) GetUserHost() string {
 	return ""
 }
 
-// 更新用户结构
 type UpdateUserInfo struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	UserId          int64  `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`                           // 用户id
-	Name            string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`                                              // 用户名
-	Password        string `protobuf:"bytes,3,opt,name=password,proto3" json:"password,omitempty"`                                      // 密码
-	PasswordLevel   int32  `protobuf:"varint,4,opt,name=password_level,json=passwordLevel,proto3" json:"password_level,omitempty"`      // 密码等级
-	InstitutionName string `protobuf:"bytes,5,opt,name=institution_name,json=institutionName,proto3" json:"institution_name,omitempty"` // 机构名
-	Grade           string `protobuf:"bytes,6,opt,name=grade,proto3" json:"grade,omitempty"`                                            // 职级
-	Area            string `protobuf:"bytes,7,opt,name=area,proto3" json:"area,omitempty"`                                              // 区域
+	UserId          int64  `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Name            string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Password        string `protobuf:"bytes,3,opt,name=password,proto3" json:"password,omitempty"`
+	PasswordLevel   int32  `protobuf:"varint,4,opt,name=password_level,json=passwordLevel,proto3" json:"password_level,omitempty"`
+	InstitutionName string `protobuf:"bytes,5,opt,name=institution_name,json=institutionName,proto3" json:"institution_name,omitempty"`
+	Grade           string `protobuf:"bytes,6,opt,name=grade,proto3" json:"grade,omitempty"`
+	Area            string `protobuf:"bytes,7,opt,name=area,proto3" json:"area,omitempty"`
 }
 
 func (x *UpdateUserInfo) Reset() {
@@ -369,14 +366,14 @@ type Message struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	UserId         int64  `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`                        //用户id
-	RecordId       int64  `protobuf:"varint,2,opt,name=record_id,json=recordId,proto3" json:"record_id,omitempty"`                  // 记录id
-	UserName       string `protobuf:"bytes,3,opt,name=user_name,json=userName,proto3" json:"user_name,omitempty"`                   // 用户名
-	MessageTitle   string `protobuf:"bytes,4,opt,name=message_title,json=messageTitle,proto3" json:"message_title,omitempty"`       // 消息标题
-	MessageContent string `protobuf:"bytes,5,opt,name=message_content,json=messageContent,proto3" json:"message_content,omitempty"` // 消息内容
-	MessageDetail  string `protobuf:"bytes,6,opt,name=message_detail,json=messageDetail,proto3" json:"message_detail,omitempty"`    // 消息详情
-	HasRead        int32  `protobuf:"varint,7,opt,name=has_read,json=hasRead,proto3" json:"has_read,omitempty"`                     // 是否已读, 0表示未读，其他表示已读
-	CreatedAt      int64  `protobuf:"varint,8,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`               // 创建时间
+	UserId         int64  `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	RecordId       int64  `protobuf:"varint,2,opt,name=record_id,json=recordId,proto3" json:"record_id,omitempty"`
+	UserName       string `protobuf:"bytes,3,opt,name=user_name,json=userName,proto3" json:"user_name,omitempty"`
+	MessageTitle   string `protobuf:"bytes,4,opt,name=message_title,json=messageTitle,proto3" json:"message_title,omitempty"`
+	MessageContent string `protobuf:"bytes,5,opt,name=message_content,json=messageContent,proto3" json:"message_content,omitempty"`
+	MessageDetail  string `protobuf:"bytes,6,opt,name=message_detail,json=messageDetail,proto3" json:"message_detail,omitempty"`
+	HasRead        int32  `protobuf:"varint,7,opt,name=has_read,json=hasRead,proto3" json:"has_read,omitempty"`
+	CreatedAt      int64  `protobuf:"varint,8,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
 }
 
 func (x *Message) Reset() {

@@ -25,7 +25,7 @@ type MUserMessageCreateRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	UserMessages []*Message `protobuf:"bytes,1,rep,name=user_messages,json=userMessages,proto3" json:"user_messages,omitempty"` // 用户消息
+	UserMessages []*Message `protobuf:"bytes,1,rep,name=user_messages,json=userMessages,proto3" json:"user_messages,omitempty"`
 }
 
 func (x *MUserMessageCreateRequest) Reset() {
@@ -135,7 +135,7 @@ type UserMessageCreateRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	UserMessage *Message `protobuf:"bytes,1,opt,name=user_message,json=userMessage,proto3" json:"user_message,omitempty"` // 用户消息
+	UserMessage *Message `protobuf:"bytes,1,opt,name=user_message,json=userMessage,proto3" json:"user_message,omitempty"`
 }
 
 func (x *UserMessageCreateRequest) Reset() {
@@ -358,16 +358,15 @@ func (x *UserMessageGetResponse) GetData() *UserMessageGetResponse_Data {
 	return nil
 }
 
-// 获取用户消息列表
 type UserMessageListRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	UserId   int64 `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`       // 用户id
-	Page     int32 `protobuf:"varint,2,opt,name=page,proto3" json:"page,omitempty"`                         // 第几页
-	PageSize int32 `protobuf:"varint,3,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty"` // 每页的数量
-	HasRead  int32 `protobuf:"varint,4,opt,name=has_read,json=hasRead,proto3" json:"has_read,omitempty"`    // 是否已读, 0表示未读，其他表示已读
+	UserId   int64 `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Page     int32 `protobuf:"varint,2,opt,name=page,proto3" json:"page,omitempty"`
+	PageSize int32 `protobuf:"varint,3,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty"`
+	HasRead  int32 `protobuf:"varint,4,opt,name=has_read,json=hasRead,proto3" json:"has_read,omitempty"`
 }
 
 func (x *UserMessageListRequest) Reset() {
@@ -493,15 +492,14 @@ func (x *UserMessageListResponse) GetData() *UserMessageListResponse_Data {
 	return nil
 }
 
-// 更新用户消息状态
 type UserMessageUpdateRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	UserId    int64 `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`          // 用户id
-	MessageId int64 `protobuf:"varint,2,opt,name=message_id,json=messageId,proto3" json:"message_id,omitempty"` // 记录id
-	HasRead   int32 `protobuf:"varint,3,opt,name=has_read,json=hasRead,proto3" json:"has_read,omitempty"`       // 传非零值即更新为已读状态
+	UserId    int64 `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	MessageId int64 `protobuf:"varint,2,opt,name=message_id,json=messageId,proto3" json:"message_id,omitempty"`
+	HasRead   int32 `protobuf:"varint,3,opt,name=has_read,json=hasRead,proto3" json:"has_read,omitempty"`
 }
 
 func (x *UserMessageUpdateRequest) Reset() {
@@ -620,14 +618,13 @@ func (x *UserMessageUpdateResponse) GetData() *UserMessageUpdateResponse_Data {
 	return nil
 }
 
-// 删除用户消息
 type UserMessageDeleteRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	UserId    int64 `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`          // 用户id
-	MessageId int64 `protobuf:"varint,2,opt,name=message_id,json=messageId,proto3" json:"message_id,omitempty"` // 记录id
+	UserId    int64 `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	MessageId int64 `protobuf:"varint,2,opt,name=message_id,json=messageId,proto3" json:"message_id,omitempty"`
 }
 
 func (x *UserMessageDeleteRequest) Reset() {
@@ -739,13 +736,12 @@ func (x *UserMessageDeleteResponse) GetData() *UserMessageDeleteResponse_Data {
 	return nil
 }
 
-// 创建用户
 type UserInfoCreateRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	CreateUserInfo *CreateUserInfo `protobuf:"bytes,1,opt,name=create_user_info,json=createUserInfo,proto3" json:"create_user_info,omitempty"` // 创建用户的信息
+	CreateUserInfo *CreateUserInfo `protobuf:"bytes,1,opt,name=create_user_info,json=createUserInfo,proto3" json:"create_user_info,omitempty"`
 }
 
 func (x *UserInfoCreateRequest) Reset() {
@@ -855,7 +851,7 @@ type UserInfoUpdateRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	UpdateUserInfo *UpdateUserInfo `protobuf:"bytes,1,opt,name=update_user_info,json=updateUserInfo,proto3" json:"update_user_info,omitempty"` // 更新后的用户信息，采用覆盖方式
+	UpdateUserInfo *UpdateUserInfo `protobuf:"bytes,1,opt,name=update_user_info,json=updateUserInfo,proto3" json:"update_user_info,omitempty"`
 }
 
 func (x *UserInfoUpdateRequest) Reset() {
@@ -965,7 +961,7 @@ type UserInfoDeleteRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	UserId int64 `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"` //用户id
+	UserId int64 `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 }
 
 func (x *UserInfoDeleteRequest) Reset() {
@@ -1070,7 +1066,6 @@ func (x *UserInfoDeleteResponse) GetData() *UserInfoDeleteResponse_Data {
 	return nil
 }
 
-// 暂时支持通过用户名和email进行模糊搜索
 type UserInfoSearchRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1210,7 +1205,7 @@ type UserInfoGetRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	UserId int64 `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"` //用户id
+	UserId int64 `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 }
 
 func (x *UserInfoGetRequest) Reset() {
@@ -1320,7 +1315,7 @@ type MUserInfoGetRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	UserIds []int64 `protobuf:"bytes,1,rep,packed,name=user_ids,json=userIds,proto3" json:"user_ids,omitempty"` //用户列表
+	UserIds []int64 `protobuf:"varint,1,rep,packed,name=user_ids,json=userIds,proto3" json:"user_ids,omitempty"`
 }
 
 func (x *MUserInfoGetRequest) Reset() {
@@ -1430,7 +1425,7 @@ type UserInfoGetByNameRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	UserName string `protobuf:"bytes,1,opt,name=user_name,json=userName,proto3" json:"user_name,omitempty"` // 用户名
+	UserName string `protobuf:"bytes,1,opt,name=user_name,json=userName,proto3" json:"user_name,omitempty"`
 }
 
 func (x *UserInfoGetByNameRequest) Reset() {
@@ -1535,16 +1530,15 @@ func (x *UserInfoGetByNameResponse) GetData() *UserInfoGetByNameResponse_Data {
 	return nil
 }
 
-// 用户信息校验，主要用于登录授权
 type UserInfoAuthRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	UserName    string `protobuf:"bytes,2,opt,name=user_name,json=userName,proto3" json:"user_name,omitempty"`          // 用户名
-	Email       string `protobuf:"bytes,3,opt,name=email,proto3" json:"email,omitempty"`                                // 邮箱
-	PhoneNumber string `protobuf:"bytes,4,opt,name=phone_number,json=phoneNumber,proto3" json:"phone_number,omitempty"` // 验证码
-	Password    string `protobuf:"bytes,5,opt,name=password,proto3" json:"password,omitempty"`                          // 密码, md5后的值
+	UserName    string `protobuf:"bytes,2,opt,name=user_name,json=userName,proto3" json:"user_name,omitempty"`
+	Email       string `protobuf:"bytes,3,opt,name=email,proto3" json:"email,omitempty"`
+	PhoneNumber string `protobuf:"bytes,4,opt,name=phone_number,json=phoneNumber,proto3" json:"phone_number,omitempty"`
+	Password    string `protobuf:"bytes,5,opt,name=password,proto3" json:"password,omitempty"`
 }
 
 func (x *UserInfoAuthRequest) Reset() {
@@ -1675,7 +1669,7 @@ type MUserMessageCreateResponse_Data struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	MessageIds []int64 `protobuf:"varint,1,rep,packed,name=message_ids,json=messageIds,proto3" json:"message_ids,omitempty"` // 消息id列表
+	MessageIds []int64 `protobuf:"varint,1,rep,packed,name=message_ids,json=messageIds,proto3" json:"message_ids,omitempty"`
 }
 
 func (x *MUserMessageCreateResponse_Data) Reset() {
@@ -1722,7 +1716,7 @@ type UserMessageCreateResponse_Data struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	MessageId int64 `protobuf:"varint,1,opt,name=message_id,json=messageId,proto3" json:"message_id,omitempty"` // 记录id
+	MessageId int64 `protobuf:"varint,1,opt,name=message_id,json=messageId,proto3" json:"message_id,omitempty"`
 }
 
 func (x *UserMessageCreateResponse_Data) Reset() {
@@ -1816,9 +1810,9 @@ type UserMessageListResponse_Data struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Total        int32      `protobuf:"varint,1,opt,name=total,proto3" json:"total,omitempty"`                                  // 总数
-	UnReadTotal  int32      `protobuf:"varint,2,opt,name=un_read_total,json=unReadTotal,proto3" json:"un_read_total,omitempty"` // 未读总数
-	UserMessages []*Message `protobuf:"bytes,3,rep,name=user_messages,json=userMessages,proto3" json:"user_messages,omitempty"` // 消息内容
+	Total        int32      `protobuf:"varint,1,opt,name=total,proto3" json:"total,omitempty"`
+	UnReadTotal  int32      `protobuf:"varint,2,opt,name=un_read_total,json=unReadTotal,proto3" json:"un_read_total,omitempty"`
+	UserMessages []*Message `protobuf:"bytes,3,rep,name=user_messages,json=userMessages,proto3" json:"user_messages,omitempty"`
 }
 
 func (x *UserMessageListResponse_Data) Reset() {
@@ -1955,7 +1949,7 @@ type UserInfoCreateResponse_Data struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	UserId int64 `protobuf:"varint,3,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"` // 创建后的用户id
+	UserId int64 `protobuf:"varint,3,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 }
 
 func (x *UserInfoCreateResponse_Data) Reset() {
@@ -2133,7 +2127,7 @@ type UserInfoGetResponse_Data struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	UserInfo *BaseUserInfo `protobuf:"bytes,1,opt,name=user_info,json=userInfo,proto3" json:"user_info,omitempty"` //用户信息
+	UserInfo *BaseUserInfo `protobuf:"bytes,1,opt,name=user_info,json=userInfo,proto3" json:"user_info,omitempty"`
 }
 
 func (x *UserInfoGetResponse_Data) Reset() {
@@ -2227,7 +2221,7 @@ type UserInfoGetByNameResponse_Data struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	UserInfo *BaseUserInfo `protobuf:"bytes,1,opt,name=user_info,json=userInfo,proto3" json:"user_info,omitempty"` //用户信息
+	UserInfo *BaseUserInfo `protobuf:"bytes,1,opt,name=user_info,json=userInfo,proto3" json:"user_info,omitempty"`
 }
 
 func (x *UserInfoGetByNameResponse_Data) Reset() {
@@ -2274,7 +2268,7 @@ type UserInfoAuthResponse_Data struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	UserInfo *BaseUserInfo `protobuf:"bytes,1,opt,name=user_info,json=userInfo,proto3" json:"user_info,omitempty"` //用户信息
+	UserInfo *BaseUserInfo `protobuf:"bytes,1,opt,name=user_info,json=userInfo,proto3" json:"user_info,omitempty"`
 }
 
 func (x *UserInfoAuthResponse_Data) Reset() {

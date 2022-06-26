@@ -22,33 +22,19 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type CloudUserCenterClient interface {
-	// 创建用户
 	UserInfoCreate(ctx context.Context, in *UserInfoCreateRequest, opts ...grpc.CallOption) (*UserInfoCreateResponse, error)
-	// 登录校验
 	UserInfoAuth(ctx context.Context, in *UserInfoAuthRequest, opts ...grpc.CallOption) (*UserInfoAuthResponse, error)
-	// 更新用户信息
 	UserInfoUpdate(ctx context.Context, in *UserInfoUpdateRequest, opts ...grpc.CallOption) (*UserInfoUpdateResponse, error)
-	// 删除用户
 	UserInfoDelete(ctx context.Context, in *UserInfoDeleteRequest, opts ...grpc.CallOption) (*UserInfoDeleteResponse, error)
-	// 获取用户信息
 	UserInfoGet(ctx context.Context, in *UserInfoGetRequest, opts ...grpc.CallOption) (*UserInfoGetResponse, error)
-	// 批量获取用户信息
 	MUserInfoGet(ctx context.Context, in *MUserInfoGetRequest, opts ...grpc.CallOption) (*MUserInfoGetResponse, error)
-	// 根据用户名获取用户信息
 	UserInfoGetByName(ctx context.Context, in *UserInfoGetByNameRequest, opts ...grpc.CallOption) (*UserInfoGetByNameResponse, error)
-	// 搜索用户信息
 	UserInfoSearch(ctx context.Context, in *UserInfoSearchRequest, opts ...grpc.CallOption) (*UserInfoSearchResponse, error)
-	// 创建用户消息
 	UserMessageCreate(ctx context.Context, in *UserMessageCreateRequest, opts ...grpc.CallOption) (*UserMessageCreateResponse, error)
-	// 批量创建用户消息
 	MUserMessageCreate(ctx context.Context, in *MUserMessageCreateRequest, opts ...grpc.CallOption) (*MUserMessageCreateResponse, error)
-	// 用户消息列表
 	UserMessageList(ctx context.Context, in *UserMessageListRequest, opts ...grpc.CallOption) (*UserMessageListResponse, error)
-	// 用户消息获取
 	UserMessageGet(ctx context.Context, in *UserMessageGetRequest, opts ...grpc.CallOption) (*UserMessageGetResponse, error)
-	// 用户消息更新
 	UserMessageUpdate(ctx context.Context, in *UserMessageUpdateRequest, opts ...grpc.CallOption) (*UserMessageUpdateResponse, error)
-	// 用户消息删除
 	UserMessageDelete(ctx context.Context, in *UserMessageDeleteRequest, opts ...grpc.CallOption) (*UserMessageDeleteResponse, error)
 }
 
@@ -190,33 +176,19 @@ func (c *cloudUserCenterClient) UserMessageDelete(ctx context.Context, in *UserM
 // All implementations must embed UnimplementedCloudUserCenterServer
 // for forward compatibility
 type CloudUserCenterServer interface {
-	// 创建用户
 	UserInfoCreate(context.Context, *UserInfoCreateRequest) (*UserInfoCreateResponse, error)
-	// 登录校验
 	UserInfoAuth(context.Context, *UserInfoAuthRequest) (*UserInfoAuthResponse, error)
-	// 更新用户信息
 	UserInfoUpdate(context.Context, *UserInfoUpdateRequest) (*UserInfoUpdateResponse, error)
-	// 删除用户
 	UserInfoDelete(context.Context, *UserInfoDeleteRequest) (*UserInfoDeleteResponse, error)
-	// 获取用户信息
 	UserInfoGet(context.Context, *UserInfoGetRequest) (*UserInfoGetResponse, error)
-	// 批量获取用户信息
 	MUserInfoGet(context.Context, *MUserInfoGetRequest) (*MUserInfoGetResponse, error)
-	// 根据用户名获取用户信息
 	UserInfoGetByName(context.Context, *UserInfoGetByNameRequest) (*UserInfoGetByNameResponse, error)
-	// 搜索用户信息
 	UserInfoSearch(context.Context, *UserInfoSearchRequest) (*UserInfoSearchResponse, error)
-	// 创建用户消息
 	UserMessageCreate(context.Context, *UserMessageCreateRequest) (*UserMessageCreateResponse, error)
-	// 批量创建用户消息
 	MUserMessageCreate(context.Context, *MUserMessageCreateRequest) (*MUserMessageCreateResponse, error)
-	// 用户消息列表
 	UserMessageList(context.Context, *UserMessageListRequest) (*UserMessageListResponse, error)
-	// 用户消息获取
 	UserMessageGet(context.Context, *UserMessageGetRequest) (*UserMessageGetResponse, error)
-	// 用户消息更新
 	UserMessageUpdate(context.Context, *UserMessageUpdateRequest) (*UserMessageUpdateResponse, error)
-	// 用户消息删除
 	UserMessageDelete(context.Context, *UserMessageDeleteRequest) (*UserMessageDeleteResponse, error)
 	mustEmbedUnimplementedCloudUserCenterServer()
 }
